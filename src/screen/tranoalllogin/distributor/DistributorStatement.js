@@ -25,7 +25,7 @@ const DistributorStatement = () => {
     'S.No', '     Date ', '  Particulars   ', 'Transaction ID', 'View Transactional Sheet','Debit','Credit', 'Balance'
   ];
 
-  const collapsedTableHead = ['S.no.    ','Debit     ', 'Credit', 'Balance'];
+  const collapsedTableHead = ['S.No.    ','Debit     ', 'Credit', 'Balance'];
 
   const fullTableData = [
     ['01','21-02-24', 'Dharmendra', '  123456',  '      TRANS001', '    10000', '   20000' ,'50000'],

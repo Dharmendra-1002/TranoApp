@@ -88,13 +88,13 @@ const AppNavigation = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Root" component={DrawerNavigation} />
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="HomeWallet" component={HomeWallet} options={{
+            <Stack.Screen name="Trano" component={Home} />
+            {/* <Stack.Screen name="HomeWallet" component={HomeWallet} options={{
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
-            }} />
+            }} /> */}
 
 
 <Stack.Screen name="MdEsim" component={MdEsim} options={{
@@ -284,7 +284,7 @@ const AppNavigation = () => {
                 headerTitle: () => (
                     <View style={{ backgroundColor: '#4e2d87'}}>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 16 }}>Shashi kumar </Text>
-                        <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 14 }}>OEM</Text>
+                        <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 14 }}>Distributor </Text>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 12 }}>ID - 1201237</Text>
                     </View>
                 ),
@@ -538,7 +538,7 @@ const AppNavigation = () => {
 
             <Stack.Screen name="ManagingDirectorLogin" component={ManagingDirectorLogin} options={{
                 title: 'Managing Director Login',
-                headerShown: false,
+                headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'

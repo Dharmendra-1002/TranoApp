@@ -1,244 +1,127 @@
+import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import DatePicker from 'react-native-date-picker';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { useNavigation } from '@react-navigation/native';
-import React, { useState } from "react";
-import { StyleSheet, View, TextInput, Text, Modal, FlatList, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/Entypo";
+const FinanceAddnewformDebitRoyality = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    date: new Date(),
+    // Add more fields as needed
+  });
 
-function FinanceAddnewformDebitRoyality(props) {
-    const navigation = useNavigation();
-    const [modalVisible, setModalVisible] = useState(false);
-    const [selectedName, setSelectedName] = useState("");
-const data = ["State1", "State2", "State3", "State4"]; // Example data
-const data2 = ["Option1", "Option2", "Option3", "Option4"]; // Example data2
-const data3 = ["Option5", "Option6", "Option8", "Option9"]; // Example data3
-const data4 = ["Option10", "Option11", "Option12", "Option13"]; // Example data3
+  const [open, setOpen] = useState(false);
+
+  const handleInputChange = (key, value) => {
+    setFormData({
+      ...formData,
+      [key]: value
+    });
+  };
+
+  const handleSubmit = () => {
+    // Implement your form submission logic here
+    console.log(formData);
+  };
+
   return (
-    <View style={styles.container}>
-      <View style={styles.rect}>
-        <Text style={styles.loremIpsum}>New Debit Royality Account</Text>
-        <Text style={styles.date}>Date</Text>
-        <TextInput
-          placeholder="Select Date..."
-          style={styles.selectDate}
-        ></TextInput>
-       
-        <Text style={styles.loremIpsum2}>
-          Select Associate Partner/{"\n"}Channel Partner
-        </Text>
-            <View style={styles.selectNameStack}>
-          <TouchableOpacity onPress={() => setModalVisible(true)}>
-            <View style={styles.inputContainer}>
-              <TextInput
-                placeholder="Select Date..." 
-                value={selectedName}
-                style={styles.selectDate}
-                editable={false}
-              />
-              <Icon name="chevron-small-down" style={styles.icon} />
+    <SafeAreaView className="flex-1 items-center justify-center" style={{ backgroundColor: '#4e2d87' }}>
+      <View className="bg-white w-[90%] h-[95%] rounded-md mt-5">
+        <View className="mt-3 ml-2">
+          <Text className={"text-xl text-black"}>New Debit Royality Account</Text>
+        </View>
+
+        <View style={{ marginBottom: 20 }}>
+          <Text style={{ fontSize: 18, color: "black", marginTop: 5, marginLeft: 22 }}>Date</Text>
+
+          <View style={{ flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderColor: 'black', padding: 1, borderRadius: 5, backgroundColor: 'white', marginTop: 5, marginLeft: 22, marginRight: 22 }}>
+            <TextInput
+              style={{ flex: 1 }}
+              placeholder="Select Date"
+              value={formData.date.toDateString()}
+              editable={false}
+            />
+            <TouchableOpacity onPress={() => setOpen(true)}>
+              <Icon name="calendar-today" size={24} color="black" className="margin"/>
+            </TouchableOpacity>
+          </View>
+
+          <DatePicker
+            modal
+            open={open}
+            date={formData.date}
+            onConfirm={(date) => {
+              setOpen(false);
+              handleInputChange('date', date);
+            }}
+            onCancel={() => {
+              setOpen(false);
+            }}
+          />
+
+          <Text style={{ fontSize: 18, color: "black", marginTop: 5, marginLeft: 22 }}>Select Associate Partner Channel</Text>
+          <TextInput
+            style={{
+              borderWidth: 1,
+              borderColor: 'black',
+              padding: 10,
+              borderRadius: 5,
+              backgroundColor: 'white',
+              marginTop: 5,
+              marginLeft: 22,
+              marginRight: 22,
+            }}
+            onChangeText={(text) => handleInputChange('email', text)}
+            placeholder="Enter Your Name"
+          />
+
+          <Text style={{ fontSize: 18, color: "black", marginTop: 5, marginLeft: 22 }}>Select from dropdown</Text>
+          <TextInput
+            style={{
+              borderWidth: 1,
+              borderColor: 'black',
+              padding: 10,
+              borderRadius: 5,
+              backgroundColor: 'white',
+              marginTop: 5,
+              marginLeft: 22,
+              marginRight: 22,
+            }}
+            onChangeText={(text) => handleInputChange('email', text)}
+            placeholder="Date of Expense"
+          />
+
+          <Text style={{ fontSize: 18, color: "black", marginTop: 5, marginLeft: 22 }}>Debit Amount</Text>
+          <TextInput
+            style={{
+              borderWidth: 1,
+              borderColor: 'black',
+              padding: 10,
+              borderRadius: 5,
+              backgroundColor: 'white',
+              marginTop: 5,
+              marginLeft: 22,
+              marginRight: 22,
+            }}
+            onChangeText={(text) => handleInputChange('email', text)}
+            placeholder="Expense head"
+          />
+
+          <TouchableOpacity onPress={handleSubmit}>
+            <View className="items-center justify-center bg-lime-400 ml-5 mr-5 mt-5">
+              <Text className="text-black py-3 font-bold">
+                Submit
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
-
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          <View style={styles.modalView}>
-            <FlatList
-              data={data2}
-              keyExtractor={(item) => item}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  style={styles.option}
-                  onPress={() => {
-                    setSelectedName(item);
-                    setModalVisible(false);
-                  }}
-                >
-                  <Text style={styles.optionText}>{item}</Text>
-                </TouchableOpacity>
-              )}
-            />
-          </View>
-        </Modal>
-        <Text style={styles.selectFromDropdown}>Select from Dropdown</Text>
-       
-        <View style={styles.selectNameStack}>
-          <TouchableOpacity onPress={() => setModalVisible(true)}>
-            <View style={styles.inputContainer}>
-              <TextInput
-                placeholder="Select Date..." 
-                value={selectedName}
-                style={styles.selectDate}
-                editable={false}
-              />
-              <Icon name="chevron-small-down" style={styles.icon} />
-            </View>
-          </TouchableOpacity>
-        </View>
-
-        <Modal
-          animationType="slide"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          <View style={styles.modalView}>
-            <FlatList
-              data={data3}
-              keyExtractor={(item) => item}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  style={styles.option}
-                  onPress={() => {
-                    setSelectedName(item);
-                    setModalVisible(false);
-                  }}
-                >
-                  <Text style={styles.optionText}>{item}</Text>
-                </TouchableOpacity>
-              )}
-            />
-          </View>
-        </Modal>
-        <Text style={styles.debitAmountRs}>Debit Amount (Rs.)</Text>
-       
-        <TextInput
-          placeholder="placeholder"
-          style={styles.placeholder3}
-        ></TextInput>
       </View>
-    </View>
-  );
+    </SafeAreaView>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "rgba(78,45,135,1)"
-  },
-  rect: {
-    width: 361,
-    height: 706,
-    backgroundColor: "rgba(255,255,255,1)",
-    borderRadius: 10,
-    marginTop: 22,
-    marginLeft: 14
-  },
-  loremIpsum: {
-    fontFamily: "roboto-700",
-    color: "#121212",
-    fontSize: 18,
-    marginTop: 55,
-    marginLeft: 22
-  },
-  date: {
-    fontFamily: "roboto-regular",
-    color: "rgba(0,0,0,1)",
-    fontSize: 18,
-    marginTop: 13,
-    marginLeft: 26
-  },
-  selectDate: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 40,
-    width: 302,
-    borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 5,
-    marginLeft: 26
-  },
-  loremIpsum2: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    fontSize: 18,
-    marginTop: 12,
-    marginLeft: 26
-  },
-  placeholder: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 40,
-    width: 302,
-    borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 5,
-    marginLeft: 26
-  },
-  selectFromDropdown: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    fontSize: 18,
-    marginTop: 20,
-    marginLeft: 26
-  },
-  placeholder2: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 40,
-    width: 302,
-    borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 5,
-    marginTop: 3,
-    marginLeft: 25
-  },
-  debitAmountRs: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    fontSize: 18,
-    textAlign: "center",
-    marginTop: 21,
-    marginLeft:-160
-  },
-  placeholder3: {
-    fontFamily: "roboto-regular",
-    color: "#121212",
-    height: 40,
-    width: 302,
-    borderWidth: 1,
-    borderColor: "#000000",
-    borderRadius: 5,
-    marginTop: 1,
-    marginLeft: 26
-  },
-  modalView: {
-    flex: 1,
-    backgroundColor: "white",
-    marginTop: 130,
-    marginBottom:400,
-    marginLeft:'50',
-    marginHorizontal: 30,
-    borderRadius: 10,
-    padding: 20,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-    borderWidth:2,
-    borderColor:'#4e2d87'
-  },
-  option: {
-    padding: 10,
-    width: "100%",
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-   },
-  optionText: {
-    fontSize: 18,
-  }
-});
+export default FinanceAddnewformDebitRoyality
 
-export default FinanceAddnewformDebitRoyality;
+

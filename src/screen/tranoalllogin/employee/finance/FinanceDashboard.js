@@ -18,14 +18,7 @@ const FinanceDashboard = () => {
               </TouchableOpacity>
             </View>
 
-            <View className={`w-11/12 h-16 bg-violet-950 m-7 rounded-lg shadow-lg p-4 mt-2`}>
-              <TouchableOpacity onPress={() => navigation.navigate('')}>
-                <View className={`flex justify-center items-center `}>
-                  <Text className="text-white text-lg font-medium">Debit Commission Account</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-
+        
 
             <View className={`w-11/12 h-16 bg-violet-950 m-7 rounded-lg shadow-lg p-4 mt-2`}>
               <TouchableOpacity onPress={() => navigation.navigate('FinanceDebitRoyalityAccount')}>
