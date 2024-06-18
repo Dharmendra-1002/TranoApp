@@ -82,7 +82,10 @@ import MarketingExecutiveOderForm from '../screen/tranoalllogin/employee/marketi
 import MarketingExecutiveAddnewForm from '../screen/tranoalllogin/employee/marketingexecutive/MarketingExecutiveAddnewForm';
 import DistributorRechaegeWallet from '../screen/tranoalllogin/distributor/DistributorRechaegeWallet';
 import Credit_Limit_Notification from '../screen/notification/Credit_Limit_Notification';
-
+import EmployeeLogin from '../screen/tranoalllogin/employee/EmployeeLogin';
+import Distibutorvltd_sld from '../screen/tranoalllogin/distributor/Distributorvltd_sld';
+import Distributorwallet_certificate_gesture from '../screen/tranoalllogin/distributor/Distributorwallet_certificate_gesture';
+import CustomerDowanload from '../screen/tranoalllogin/customer/CustomerDowanload';
 const Stack = createStackNavigator();
 const AppNavigation = () => {
     return (
@@ -104,6 +107,55 @@ const AppNavigation = () => {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
+
+
+<Stack.Screen name="Distributorwallet_certificate_gesture" component={Distributorwallet_certificate_gesture} options={{
+                title: 'Distributorwallet_certificate_gesture',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+
+<Stack.Screen name="CustomerDowanload" component={CustomerDowanload} options={{
+                title: 'CustomerDowanload',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+<Stack.Screen name="EmployeeLogin" component={EmployeeLogin} options={{
+                title: 'Employee Login',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+<Stack.Screen name="Distibutorvltd_sld" component={Distibutorvltd_sld} options={{
+                title: 'Distibutorvltd_sld',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
 
 
 

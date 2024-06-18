@@ -1,13 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView, View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, SafeAreaView, TouchableOpacity,Button,Modal } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DataTable } from 'react-native-paper';
+import { Calendar } from 'react-native-calendars';
+import { IconButton } from 'react-native-paper';
 import Orientation from 'react-native-orientation-locker'; // Import Orientation
 
 const OemSpendList = () => {
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedBox, setSelectedBox] = useState(null);
   const navigation = useNavigation();
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const onDayPress = (day) => {
+    if (selectedBox === 'start') {
+      setStartDate(day.dateString);
+    } else if (selectedBox === 'end') {
+      setEndDate(day.dateString);
+    }
+    setModalVisible(false);
+  };
+  
+  const openCalendar = (box) => {
+    setSelectedBox(box);
+    setModalVisible(true);
+  };
+  
+  
+  
+  
+  
   // useEffect to manage orientation when component mounts or is unmounted
   useEffect(() => {
     if (isExpanded) {
@@ -47,6 +71,66 @@ const OemSpendList = () => {
           </View>
        
         </View>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
+            <View style={{ alignItems: 'center' }}>
+              <Text style={{ marginBottom: 5, marginRight:60 }} className="text-black text-lg ">Start Date</Text>
+              <TouchableOpacity onPress={() => openCalendar('start')} style={{ flexDirection: 'row', alignItems: 'center', borderWidth: 1, padding: 1, borderRadius: 5, paddingLeft:10,gap:-20 }}>
+                <Text style={{ marginRight: 10 }}>{startDate ? startDate : 'Select Start Date'}</Text>
+                <IconButton
+                  icon="calendar"
+                  color="#000"
+                  size={30}
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={{ alignItems: 'center' }}>
+              <Text style={{ marginBottom: 5, marginRight:60 }} className="text-black text-lg">End Date</Text>
+              <TouchableOpacity onPress={() => openCalendar('end')} style={{ flexDirection: 'row', alignItems: 'center', borderWidth: 1, padding: 1, borderRadius: 5, paddingLeft:10, gap:-15}}>
+                <Text style={{ marginRight: 10 }}>{endDate ? endDate : 'Select End Date'}</Text>
+                <IconButton
+                  icon="calendar"
+                  color="#000"
+                  size={30}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+          
+   
+
+{/* {end calendar code} */}
+
+        <TouchableOpacity>
+          
+         
+          
+          <View className="mt-5">
+          {/* <Button title="DOWNLOAD PDF" color="#4e2d87" /> */}
+          <Text className="bg-yellow-300 text-center font-black p-3 rounded-lg "> DOWNLOAD PDF</Text>
+       
+          </View>
+        </TouchableOpacity>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <View style={styles.container}>
           <TouchableOpacity onPress={() => setIsExpanded(!isExpanded)} style={{ marginBottom: 10 }}>

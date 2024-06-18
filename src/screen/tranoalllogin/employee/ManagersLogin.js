@@ -12,32 +12,32 @@ const ManagersLogin = () => {
         <View className={`w-full h-full bg-white  rounded-lg shadow-lg p-4`}>
           <View className={`flex justify-center items-center `}>
             <View className={` w-11/12 h-70 bg-purple-200 m-10 rounded-lg shadow-lg p-4`}>
-              <TouchableOpacity onPress={() => navigation.navigate('ManagingDirectorLogin')}>
+              <TouchableOpacity onPress={() => navigation.navigate('Mdhome')}>
                 <View>
                   <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">Managing Director </Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('AuthenticationLogin')}>
+              <TouchableOpacity onPress={() => navigation.navigate('AuthenticationCreditLimit')}>
                 <View>
                   <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">Authentication Manager </Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('FinanceLogin')}>
+              <TouchableOpacity onPress={() => navigation.navigate('FinanceDashboard')}>
                 <View>
                   <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">Finance Manager </Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('MarketingLogin')}>
+              <TouchableOpacity onPress={() => navigation.navigate('MarketingHome')}>
                 <View>
                   <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">Marketing Head</Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('StatemanagerLogin')}>
+              <TouchableOpacity onPress={() => navigation.navigate('StateMangerHome')}>
                 <View>
                   <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">State Manager</Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('MarketingExecutiveLogin')}>
+              <TouchableOpacity onPress={() => navigation.navigate('MarketingExecutiveHome')}>
                 <View>
                   <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">Marketing Executive </Text>
                 </View>

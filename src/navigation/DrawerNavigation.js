@@ -23,33 +23,34 @@ const DrawerNavigation = () => {
         headerStyle: {
           backgroundColor: '#4e2d87',
         }, headerTintColor: '#ffff',
+        headerShown:false
       
       }} />
 
 
-               
+{/*                
 <Drawer.Screen name='Test' component={Test} options={{
         headerStyle: {
           backgroundColor: '#4e2d87',
         }, headerTintColor: '#ffff',
       
-      }} />
+      }} /> */}
 
 
-<Drawer.Screen name='Test2' component={Test2} options={{
+{/* <Drawer.Screen name='Test2' component={Test2} options={{
         headerStyle: {
           backgroundColor: '#4e2d87',
         }, headerTintColor: '#ffff',
       
-      }} />
+      }} /> */}
 
-
+{/* 
 <Drawer.Screen name='Test3' component={Test3} options={{
         headerStyle: {
           backgroundColor: '#4e2d87',
         }, headerTintColor: '#ffff',
       
-      }} />
+      }} /> */}
 
 
 
