@@ -90,7 +90,24 @@ const FinanceAddnewformDebitRoyality = () => {
               marginRight: 22,
             }}
             onChangeText={(text) => handleInputChange('email', text)}
-            placeholder="Date of Expense"
+            placeholder="Enter Number"
+          />
+
+
+<Text style={{ fontSize: 18, color: "black", marginTop: 5, marginLeft: 22 }}>Reference number</Text>
+          <TextInput
+            style={{
+              borderWidth: 1,
+              borderColor: 'black',
+              padding: 10,
+              borderRadius: 5,
+              backgroundColor: 'white',
+              marginTop: 5,
+              marginLeft: 22,
+              marginRight: 22,
+            }}
+            onChangeText={(text) => handleInputChange('email', text)}
+            placeholder="Enter Number"
           />
 
           <Text style={{ fontSize: 18, color: "black", marginTop: 5, marginLeft: 22 }}>Debit Amount</Text>
@@ -106,7 +123,7 @@ const FinanceAddnewformDebitRoyality = () => {
               marginRight: 22,
             }}
             onChangeText={(text) => handleInputChange('email', text)}
-            placeholder="Expense head"
+            placeholder="Enter Amount"
           />
 
           <TouchableOpacity onPress={handleSubmit}>

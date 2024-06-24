@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
@@ -44,7 +41,7 @@ const PasswordInput = ({ value, onChangeText }) => {
   );
 };
 
-const CustomerLogin= () => {
+const Self_ValidityLogin= () => {
   const navigation = useNavigation();
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
@@ -95,7 +92,7 @@ const CustomerLogin= () => {
 
 
               <View className='items-center justify-center'>
-                <TouchableOpacity onPress={() => navigation.navigate('Tranocertificate')} className='bg-amber-500  rounded-lg py-2.5 w-[100%]'>
+                <TouchableOpacity onPress={() => navigation.navigate('Give_Self_Validity')} className='bg-amber-500  rounded-lg py-2.5 w-[100%]'>
                   <Text className=" text-center text-white text-lg font-medium"> Login</Text>
                 </TouchableOpacity>
               </View>
@@ -118,6 +115,6 @@ const CustomerLogin= () => {
   );
 }
 
-export default CustomerLogin;
+export default Self_ValidityLogin;
 
 

@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
@@ -44,7 +41,8 @@ const PasswordInput = ({ value, onChangeText }) => {
   );
 };
 
-const CustomerLogin= () => {
+const Dowanloadcertificate
+= () => {
   const navigation = useNavigation();
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
@@ -118,6 +116,7 @@ const CustomerLogin= () => {
   );
 }
 
-export default CustomerLogin;
+export default Dowanloadcertificate
+;
 
 

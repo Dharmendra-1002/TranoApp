@@ -23,7 +23,7 @@ const Distributorwallet_certificate_gesture = () => {
               
             </View>
             <View className={`w-11/12 bg-gray-300 rounded-lg shadow-lg mb-4`}>
-            <TouchableOpacity onPress={() => navigation.navigate('Tranocertificate')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Dowanloadcertificate')}>
             <Card.Title
                 title="Dowanload"
                 subtitle="Certificate"
@@ -35,7 +35,7 @@ const Distributorwallet_certificate_gesture = () => {
             </View>
 
             <View className={`w-11/12 bg-gray-300 rounded-lg shadow-lg mb-4`}>
-            <TouchableOpacity onPress={() => navigation.navigate('Give_Self_Validity')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Self_ValidityLogin')}>
             <Card.Title
                 title="Give Self"
                 subtitle="Validity"

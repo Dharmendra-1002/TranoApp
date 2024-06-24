@@ -17,13 +17,22 @@ const Distributorvltd_sld = () => {
       <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
         <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 60 }}>
           <TouchableOpacity onPress={() => navigation.navigate('Distributorwallet_certificate_gesture')} className=' bg-[#4e2d87] w-[43%] h-28 items-center justify-center py-3 rounded-md'>
-            <MaterialCommunityIcons name="crosshairs-gps" color="white" size={40} />
-            <Text className=" text-sm text-white text-center">VLTD</Text>
+          <Image
+                                        source={require("../../../asset/VLTD.png")}
+                                        resizeMode="contain"
+                                       style={{width:120 , height:75, margintop:20, marginRight:30}}
+                                    />
+            {/* <View className="mb-3"><Text className=" text-lg text-white text-center ">VLTD</Text></View> */}
           </TouchableOpacity>
 
           <TouchableOpacity onPress={openUrl} className=' bg-[#4e2d87] w-[43%] h-28 items-center justify-center py-3 rounded-md'>
-            <View>
-              <Text className="text-lg text-white text-center">SLD </Text>
+          <Image c
+                                        source={require("../../../asset/SLD.png")}
+                                        resizeMode="contain"
+                                       style={{width:250 , height:82, marginTop:0, marginRight:5}}
+                                    />
+            <View >
+              {/* <Text className="text-lg text-white mb-5">SLD</Text> */}
             </View>
           </TouchableOpacity>
         </View>

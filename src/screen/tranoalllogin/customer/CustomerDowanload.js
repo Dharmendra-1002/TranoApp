@@ -16,7 +16,7 @@ const CustomerDowanload = () => {
     <SafeAreaView className="flex-1 items-center" style={{ backgroundColor: '#4e2d87' }}>
       <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
         <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 60 }}>
-          <TouchableOpacity onPress={() => navigation.navigate('Tranocertificate')} className=' bg-[#4e2d87] w-[43%] h-28 items-center justify-center py-3 rounded-md'>
+          <TouchableOpacity onPress={() => navigation.navigate('CustomerLogin')} className=' bg-[#4e2d87] w-[43%] h-28 items-center justify-center py-3 rounded-md'>
             <Icon name="file-download" size={50} color="white" />
             <Text className=" text-sm text-white text-center">DOWNLOAD   CERTIFICATE</Text>
             <View>
@@ -38,11 +38,11 @@ const CustomerDowanload = () => {
 
 
               <Image
-                source={require("../../../asset/ic_launcher.png")}
+                source={require("../../../asset/TranoGo.png")}
                 resizeMode="contain"
                 style={{ width: 100, height: 80, marginTop: 5, marginLeft: 5 }}
               />
-              <Text className="text-lg text-white text-center">Login Here </Text>
+              <Text className="text-lg text-white text-center mb-2">Login Here </Text>
             </View>
           </TouchableOpacity>
         </View>

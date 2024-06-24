@@ -1,18 +1,9 @@
-import { StyleSheet, View, Image, Text, TouchableOpacity, SafeAreaView, ScrollView,Linking } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableOpacity, SafeAreaView, ScrollView } from "react-native";
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
 const Trano_All_Login = () => {
     const navigation = useNavigation();
-
-
-
-
-
-    const openUrl = () => {
-        Linking.openURL('https://play.google.com/store/apps/details?id=com.tranogo&pli=1');
-      };
-      
     return (
         <SafeAreaView className='flex-1 bg-white'>
             <ScrollView>
@@ -20,28 +11,29 @@ const Trano_All_Login = () => {
                     <View style={styles.rect8} className='items-center  justify-center'>
                         <Image
                             source={require("../../asset/ctpllogo.png")}
-                            resizeMode='cover' className=" mr-24 mb-6" style={{width:276, height:64}}
+                            // resizeMode='cover' className=" mr-24 mb-6" style={{width:270, height:64}}
+                            resizeMode='cover' className="mb-6" style={{width:277, height:64,marginRight:45}}
                         />
                     </View>
-                    <View className='justify-end items-end pt-8 mx-5'>
-                        <View className=' w-24 h-24 border-white bg-[#432d87] border-[5px] absolute rounded-full justify-center items-center '>
+                    <View className='justify-end items-end pt-8 mx-1'>
+                        <View className=' w-20 h-20 border-white bg-[#432d87] border-[5px] absolute rounded-full justify-center items-center '>
                             <Image source={require("../../asset/car.png")}
-                                resizeMode='cover' className="w-14 h-14" />
+                                resizeMode='cover' className="w-12 h-12" />
                         </View>
                     </View>
                 </View>
                 <View className='px-4 py-2'>
                     <View style={styles.rect2} className='py-4'>
                         <View className=' flex-row items-center justify-between space-x-2 px-4'>
-                            <TouchableOpacity onPress={() => navigation.navigate('Login')} className='w-[28%] flex-col items-center justify-center'>
+                            <TouchableOpacity onPress={() => navigation.navigate('CustomerDowanload')} className='w-[28%] flex-col items-center justify-center'>
                                 <Image
-                                    source={require("../../asset/ic_launcher.png")}
+                                    source={require("../../asset/person.png")}
                                     resizeMode="contain"
                                     style={styles.image1Row}
                                 />
 
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => navigation.navigate('DistributorLogin')} className='w-[33%] flex-col items-center justify-center'>
+                            <TouchableOpacity onPress={() => navigation.navigate('Distibutorvltd_sld')} className='w-[33%] flex-col items-center justify-center'>
                                 <Image
                                     source={require("../../asset/enter.png")}
                                     resizeMode="contain"
@@ -65,7 +57,7 @@ const Trano_All_Login = () => {
                             <TouchableOpacity onPress={() => navigation.navigate('Distibutorvltd_sld')} className='w-[35%] flex-col items-center justify-center'>
                                 <Text className='font-normal text-[#4e2d87] text-sm' style={{fontWeight:"bold"}}>Distributor/{"\n"}Dealer Login</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => navigation.navigate('Login')} className='w-[33%] flex-col items-center justify-center'>
+                            <TouchableOpacity onPress={() => navigation.navigate('')} className='w-[33%] flex-col items-center justify-center'>
                                 <Text className='font-normal text-[#4e2d87] text-sm' style={{fontWeight:"bold"}}>Parent {"\n"} Login</Text>
                             </TouchableOpacity>
                         </View>
@@ -86,21 +78,20 @@ const Trano_All_Login = () => {
                                     <Text style={{marginLeft:10, marginTop:-2, fontFamily: "roboto-700",color: "rgba(255,255,255,1)",fontSize: 16}} >OEM Login</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => navigation.navigate('EmployeeLogin')} className=' bg-[#4e2d87] w-[48%] h-28 items-center justify-center py-3 rounded-md '>
-                            <View >
-                                <Image
-                                        source={require("../../asset/empl.png")}
+                            <TouchableOpacity onPress={() => navigation.navigate('TechnicianLogin')}className=' bg-[#4e2d87] w-[48%] h-28 items-center justify-center py-3 rounded-md'>
+                                <View >
+                                    <Image
+                                        source={require("../../asset/engineer.png")}
                                         resizeMode="contain"
-                                       style={{width:75 , height:75, marginTop:10, marginLeft:27}}
+                                        style={styles.image13}
                                     />
-                              
-                                    <Text style={{marginLeft:10, fontFamily: "roboto-700",color: "rgba(255,255,255,1)",fontSize: 16, marginBottom:20}}>Employee Login</Text>
-                                    
+                                    <Text style={styles.downloadCertificate1}>Technician{"\n"}Login</Text>
                                 </View>
-                            </TouchableOpacity>
+                            </TouchableOpacity>    
+                           
                         </View>
                      
-                        <View className=' flex-row w-[100%] justify-between' >
+                        {/* <View className=' flex-row w-[100%] justify-between' >
                             <TouchableOpacity onPress={() => navigation.navigate('Give_Self_Validity')}className=' bg-[#4e2d87] w-[48%] h-28 items-center justify-center py-3 rounded-md'>
                                 <View >
                                     <Text style={{ fontFamily: "roboto-700",color: "rgba(255,255,255,1)",fontSize: 16,top: 30, left: -25, position: "absolute"}}>Give Self Validity</Text>
@@ -121,10 +112,10 @@ const Trano_All_Login = () => {
                                     <Text style={{ fontFamily: "roboto-700",color: "rgba(255,255,255,1)",fontSize: 16,top: 15 , left: -5, position: "absolute"}}>Download{"\n"}Certificate</Text>
                                 </View>
                             </TouchableOpacity>
-                        </View>
+                        </View> */}
                       
                         <View className=' flex-row w-[100%] justify-between' >
-                            <TouchableOpacity onPress={() => navigation.navigate('WalletLogin')}className=' bg-[#4e2d87] w-[48%] h-28 items-center justify-center py-3 rounded-md'>
+                            {/* <TouchableOpacity onPress={() => navigation.navigate('WalletLogin')}className=' bg-[#4e2d87] w-[48%] h-28 items-center justify-center py-3 rounded-md'>
                                 <View >
                                     <Image
                                         source={require("../../asset/wallet.png")}
@@ -133,17 +124,8 @@ const Trano_All_Login = () => {
                                     />
                                     <Text style={{ fontFamily: "roboto-700",color: "rgba(255,255,255,1)",fontSize: 16,top: 25 , left: -15, position: "absolute"}}>Wallet Login</Text>
                                 </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={() => navigation.navigate('TechnicianLogin')}className=' bg-[#4e2d87] w-[48%] h-28 items-center justify-center py-3 rounded-md'>
-                                <View >
-                                    <Image
-                                        source={require("../../asset/engineer.png")}
-                                        resizeMode="contain"
-                                        style={styles.image13}
-                                    />
-                                    <Text style={styles.downloadCertificate1}>Technician{"\n"}Login</Text>
-                                </View>
-                            </TouchableOpacity>                    
+                            </TouchableOpacity> */}
+                                          
                         </View>   
                         <View className=' flex-row w-[100%] justify-between' >
                             <TouchableOpacity onPress={() => navigation.navigate('AssociateLogin')}className=' bg-[#4e2d87] w-[48%] h-28 items-center justify-center py-3 rounded-md'>
@@ -167,6 +149,20 @@ const Trano_All_Login = () => {
                                 </View>
                             </TouchableOpacity>                    
                         </View>            
+                        <View>
+                            <TouchableOpacity onPress={() => navigation.navigate('ManagersLogin')} className=' bg-[#4e2d87] w-[100%] h-28 items-center justify-center py-3 rounded-md '>
+                            <View >
+                                <Image
+                                        source={require("../../asset/empl.png")}
+                                        resizeMode="contain"
+                                       style={{width:75 , height:75, marginTop:10, marginLeft:27}}
+                                    />
+                              
+                                    <Text style={{marginLeft:10, fontFamily: "roboto-700",color: "rgba(255,255,255,1)",fontSize: 16, marginBottom:20}}>Employee Login</Text>
+                                    
+                                </View>
+                            </TouchableOpacity> 
+                        </View>
                     </View>
                 </View>
             </ScrollView>
@@ -174,9 +170,6 @@ const Trano_All_Login = () => {
 
     )
 }
-
-
-
 
 const styles = StyleSheet.create({
     container: {
@@ -241,7 +234,7 @@ const styles = StyleSheet.create({
         marginTop: 2,
     },
     image1Row: {
-        height: 40,
+        height: 42,
       
     },
     customerLogin1: {

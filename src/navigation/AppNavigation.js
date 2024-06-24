@@ -86,6 +86,9 @@ import EmployeeLogin from '../screen/tranoalllogin/employee/EmployeeLogin';
 import Distibutorvltd_sld from '../screen/tranoalllogin/distributor/Distributorvltd_sld';
 import Distributorwallet_certificate_gesture from '../screen/tranoalllogin/distributor/Distributorwallet_certificate_gesture';
 import CustomerDowanload from '../screen/tranoalllogin/customer/CustomerDowanload';
+import Self_ValidityLogin from '../screen/tranoalllogin/validity/Self_ValidityLogin';
+import Dowanloadcertificate from '../screen/tranoalllogin/certificate/Dowanloadcertificate';
+
 const Stack = createStackNavigator();
 const AppNavigation = () => {
     return (
@@ -102,6 +105,26 @@ const AppNavigation = () => {
 
 <Stack.Screen name="MdEsim" component={MdEsim} options={{
                 title: 'Md Esim',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+<Stack.Screen name="Dowanloadcertificate" component={Dowanloadcertificate} options={{
+                title: 'Dowanload certificate',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+            
+<Stack.Screen name="Self_ValidityLogin" component={Self_ValidityLogin} options={{
+                title: 'Self_ValidityLogin',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'

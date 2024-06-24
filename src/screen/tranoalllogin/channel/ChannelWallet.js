@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const ChannelWallet = () => {
-  const [isHidden, setIsHidden] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
   const navigation = useNavigation();
 
   const toggleVisibility = () => {
@@ -20,8 +20,8 @@ const ChannelWallet = () => {
             <View className="w-11/12 h-52 bg-violet-950 m-10 rounded-lg shadow-lg p-4">
               <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
                 <Text style={{ fontSize: 20, color: '#fff', textAlign: 'center' }}>My Wallet</Text>
-                <TouchableOpacity onPress={toggleVisibility}>
-                  <Icon name={isHidden ? "eye-off" : "eye"} size={24} color="#fff" />
+                <TouchableOpacity onPress={toggleVisibility} style={{ marginLeft: '5%', marginTop: 1}}>
+                  <Icon name={isHidden ? "eye" : "eye-off"} size={24} color="#fff" />
                 </TouchableOpacity>
               </View>
               <View>
