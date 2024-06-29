@@ -22,10 +22,10 @@ const MarketingExpenseTable = () => {
   }, [isExpanded]);
 
   const fullTableHead = [
-    'S.No', '  Marketing Executive Name  ', '   State   ', 'Date of Expense', 'Expense Head','Narration','Amount(Rs.)'
+    'S.No - ', '  Marketing Executive Name -  ', '   State -    ', 'Date of Expense - ', 'Expense Head - ','Narration - ','Amount(Rs.)  '
   ];
 
-  const collapsedTableHead = ['Mark Exec. Name     ','State      ', 'Amount(Rs.)'];
+  const collapsedTableHead = ['Mark Exec. Name -    ','State -     ', 'Amount(Rs.) '];
 
   const fullTableData = [
     ['01', 'Dharmendra', '         Jharkhand', '21-02-24', 'TRANS001', 'Traveling', '   20000'],

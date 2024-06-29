@@ -1,5 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { View, Text,  } from 'react-native';
+import { View, Text, } from 'react-native';
 import React from 'react'
 import DrawerNavigation from './DrawerNavigation';
 import Home from '../screen/home/Home';
@@ -88,6 +88,10 @@ import Distributorwallet_certificate_gesture from '../screen/tranoalllogin/distr
 import CustomerDowanload from '../screen/tranoalllogin/customer/CustomerDowanload';
 import Self_ValidityLogin from '../screen/tranoalllogin/validity/Self_ValidityLogin';
 import Dowanloadcertificate from '../screen/tranoalllogin/certificate/Dowanloadcertificate';
+import Mddevices7day from '../screen/tranoalllogin/employee/managingdirector/Mddevices7day';
+import MdAllSelfValidity from '../screen/tranoalllogin/employee/managingdirector/MdAllSelfValidity';
+import MdEsimHome from '../screen/tranoalllogin/employee/managingdirector/MdEsimHome';
+import MdEsimHomeFrom from '../screen/tranoalllogin/employee/managingdirector/MdEsimHomeFrom';
 
 const Stack = createStackNavigator();
 const AppNavigation = () => {
@@ -103,7 +107,63 @@ const AppNavigation = () => {
             }} /> */}
 
 
-<Stack.Screen name="MdEsim" component={MdEsim} options={{
+
+            <Stack.Screen name="MdEsimHome" component={MdEsimHome} options={{
+                title: 'MdEsimHome',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+            <Stack.Screen name="MdAllSelfValidity" component={MdAllSelfValidity} options={{
+                title: 'MdAllSelfValidity',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+
+
+            <Stack.Screen name="MdEsimHomeFrom" component={MdEsimHomeFrom} options={{
+                    title: 'MdEsimHomeFrom',
+                    headerShown: true,
+                    headerStyle: {
+                        backgroundColor: '#4e2d87'
+                    }, headerTintColor: '#ffff'
+                }} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <Stack.Screen name="Mddevices7day" component={Mddevices7day} options={{
+                title: 'Mddevices7day',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+            <Stack.Screen name="MdEsim" component={MdEsim} options={{
                 title: 'Md Esim',
                 headerShown: true,
                 headerStyle: {
@@ -114,7 +174,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="Dowanloadcertificate" component={Dowanloadcertificate} options={{
+            <Stack.Screen name="Dowanloadcertificate" component={Dowanloadcertificate} options={{
                 title: 'Dowanload certificate',
                 headerShown: true,
                 headerStyle: {
@@ -122,8 +182,8 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-            
-<Stack.Screen name="Self_ValidityLogin" component={Self_ValidityLogin} options={{
+
+            <Stack.Screen name="Self_ValidityLogin" component={Self_ValidityLogin} options={{
                 title: 'Self_ValidityLogin',
                 headerShown: true,
                 headerStyle: {
@@ -132,7 +192,7 @@ const AppNavigation = () => {
             }} />
 
 
-<Stack.Screen name="Distributorwallet_certificate_gesture" component={Distributorwallet_certificate_gesture} options={{
+            <Stack.Screen name="Distributorwallet_certificate_gesture" component={Distributorwallet_certificate_gesture} options={{
                 title: 'Distributorwallet_certificate_gesture',
                 headerShown: true,
                 headerStyle: {
@@ -146,7 +206,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="CustomerDowanload" component={CustomerDowanload} options={{
+            <Stack.Screen name="CustomerDowanload" component={CustomerDowanload} options={{
                 title: 'CustomerDowanload',
                 headerShown: true,
                 headerStyle: {
@@ -157,7 +217,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="EmployeeLogin" component={EmployeeLogin} options={{
+            <Stack.Screen name="EmployeeLogin" component={EmployeeLogin} options={{
                 title: 'Employee Login',
                 headerShown: true,
                 headerStyle: {
@@ -166,7 +226,7 @@ const AppNavigation = () => {
             }} />
 
 
-<Stack.Screen name="Distibutorvltd_sld" component={Distibutorvltd_sld} options={{
+            <Stack.Screen name="Distibutorvltd_sld" component={Distibutorvltd_sld} options={{
                 title: 'Distibutorvltd_sld',
                 headerShown: true,
                 headerStyle: {
@@ -182,7 +242,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="Credit_Limit_Notification" component={Credit_Limit_Notification} options={{
+            <Stack.Screen name="Credit_Limit_Notification" component={Credit_Limit_Notification} options={{
                 title: 'Credit Limit Notification',
                 headerShown: true,
                 headerStyle: {
@@ -192,7 +252,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="DistributorRechaegeWallet" component={DistributorRechaegeWallet} options={{
+            <Stack.Screen name="DistributorRechaegeWallet" component={DistributorRechaegeWallet} options={{
                 title: 'Leads to Payment',
                 headerShown: true,
                 headerStyle: {
@@ -206,7 +266,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="MarketingExecutiveAddnewForm" component={MarketingExecutiveAddnewForm} options={{
+            <Stack.Screen name="MarketingExecutiveAddnewForm" component={MarketingExecutiveAddnewForm} options={{
                 title: 'Form',
                 headerShown: true,
                 headerStyle: {
@@ -216,7 +276,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="MarketingExecutiveOderForm" component={MarketingExecutiveOderForm} options={{
+            <Stack.Screen name="MarketingExecutiveOderForm" component={MarketingExecutiveOderForm} options={{
                 title: 'Marketing Executive OderForm',
                 headerShown: true,
                 headerStyle: {
@@ -230,7 +290,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="FinanceAddnewformDebitRoyality" component={FinanceAddnewformDebitRoyality} options={{
+            <Stack.Screen name="FinanceAddnewformDebitRoyality" component={FinanceAddnewformDebitRoyality} options={{
                 title: 'Debit Royality Form',
                 headerShown: true,
                 headerStyle: {
@@ -240,7 +300,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="FinanceDebitRoyalityAccount" component={FinanceDebitRoyalityAccount} options={{
+            <Stack.Screen name="FinanceDebitRoyalityAccount" component={FinanceDebitRoyalityAccount} options={{
                 title: 'Finance Debit Royality Account',
                 headerShown: true,
                 headerStyle: {
@@ -252,7 +312,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="MdAddnewForm" component={MdAddnewForm} options={{
+            <Stack.Screen name="MdAddnewForm" component={MdAddnewForm} options={{
                 title: 'Md Add newForm',
                 headerShown: true,
                 headerStyle: {
@@ -260,7 +320,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="StateExpenseForm" component={StateExpenseForm} options={{
+            <Stack.Screen name="StateExpenseForm" component={StateExpenseForm} options={{
                 title: 'State Expense Form',
                 headerShown: true,
                 headerStyle: {
@@ -268,7 +328,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="StateOrderForm" component={StateOrderForm} options={{
+            <Stack.Screen name="StateOrderForm" component={StateOrderForm} options={{
                 title: 'State Order Form',
                 headerShown: true,
                 headerStyle: {
@@ -276,7 +336,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="StateMangerHome" component={StateMangerHome} options={{
+            <Stack.Screen name="StateMangerHome" component={StateMangerHome} options={{
                 title: 'State Manger Home',
                 headerShown: true,
                 headerStyle: {
@@ -286,14 +346,14 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="AuthenticationAddNewForm" component={AuthenticationAddNewForm} options={{
+            <Stack.Screen name="AuthenticationAddNewForm" component={AuthenticationAddNewForm} options={{
                 title: 'Authentication Add New Form',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
-<Stack.Screen name="CustomerLogin" component={CustomerLogin} options={{
+            <Stack.Screen name="CustomerLogin" component={CustomerLogin} options={{
                 title: 'Customer Login',
                 headerShown: true,
                 headerStyle: {
@@ -302,7 +362,7 @@ const AppNavigation = () => {
             }} />
 
 
-<Stack.Screen name="Mddevices" component={Mddevices} options={{
+            <Stack.Screen name="Mddevices" component={Mddevices} options={{
                 title: 'Md devices',
                 headerShown: true,
                 headerStyle: {
@@ -310,7 +370,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="DistributorStatement" component={DistributorStatement} options={{
+            <Stack.Screen name="DistributorStatement" component={DistributorStatement} options={{
                 title: 'Distributor Statements',
                 headerShown: true,
                 headerStyle: {
@@ -319,7 +379,7 @@ const AppNavigation = () => {
             }} />
 
 
-<Stack.Screen name="DistributorRecharges" component={DistributorRecharges} options={{
+            <Stack.Screen name="DistributorRecharges" component={DistributorRecharges} options={{
                 title: 'Distributor Recharge',
                 headerShown: true,
                 headerStyle: {
@@ -329,7 +389,7 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="DistributorSpends" component={DistributorSpends} options={{
+            <Stack.Screen name="DistributorSpends" component={DistributorSpends} options={{
                 title: 'Distributor Statement',
                 headerShown: true,
                 headerStyle: {
@@ -339,9 +399,9 @@ const AppNavigation = () => {
 
 
 
-            
 
-<Stack.Screen name="DistributorHistory" component={DistributorHistory} options={{
+
+            <Stack.Screen name="DistributorHistory" component={DistributorHistory} options={{
                 title: 'Distributor History',
                 headerShown: true,
                 headerStyle: {
@@ -354,10 +414,10 @@ const AppNavigation = () => {
 
 
 
-<Stack.Screen name="DistributorWallet" component={DistributorWallet} options={{
+            <Stack.Screen name="DistributorWallet" component={DistributorWallet} options={{
                 headerShown: true,
                 headerTitle: () => (
-                    <View style={{ backgroundColor: '#4e2d87'}}>
+                    <View style={{ backgroundColor: '#4e2d87' }}>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 16 }}>Shashi kumar </Text>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 14 }}>Distributor </Text>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 12 }}>ID - 1201237</Text>
@@ -368,7 +428,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="HomeCreditLimit" component={HomeCreditLimit} options={{
+            <Stack.Screen name="HomeCreditLimit" component={HomeCreditLimit} options={{
                 title: 'Credit Limit',
                 headerShown: true,
                 headerStyle: {
@@ -377,7 +437,7 @@ const AppNavigation = () => {
             }} />
 
 
-<Stack.Screen name="Distributor" component={Distributor} options={{
+            <Stack.Screen name="Distributor" component={Distributor} options={{
                 title: 'Distributor Login',
                 headerShown: true,
                 headerStyle: {
@@ -392,7 +452,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="HomeDeviceDashboardForm" component={HomeDeviceDashboardForm} options={{
+            <Stack.Screen name="HomeDeviceDashboardForm" component={HomeDeviceDashboardForm} options={{
                 title: 'Device Dashboard Form',
                 headerShown: true,
                 headerStyle: {
@@ -400,8 +460,8 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-            
-<Stack.Screen name="HomeDevice" component={HomeDevice} options={{
+
+            <Stack.Screen name="HomeDevice" component={HomeDevice} options={{
                 title: 'Device',
                 headerShown: true,
                 headerStyle: {
@@ -409,7 +469,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="HomeEsim" component={HomeEsim} options={{
+            <Stack.Screen name="HomeEsim" component={HomeEsim} options={{
                 title: 'Esim',
                 headerShown: true,
                 headerStyle: {
@@ -417,7 +477,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="AuthenticationAssignCreditLimit" component={AuthenticationAssignCreditLimit} options={{
+            <Stack.Screen name="AuthenticationAssignCreditLimit" component={AuthenticationAssignCreditLimit} options={{
                 title: 'Assign Credit Limit',
                 headerShown: true,
                 headerStyle: {
@@ -427,8 +487,8 @@ const AppNavigation = () => {
 
 
 
-            
-<Stack.Screen name="AuthenticationCreditLimit" component={AuthenticationCreditLimit} options={{
+
+            <Stack.Screen name="AuthenticationCreditLimit" component={AuthenticationCreditLimit} options={{
                 title: 'Authentication Credit Limit',
                 headerShown: true,
                 headerStyle: {
@@ -436,7 +496,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="FinanceAddNewForm" component={FinanceAddNewForm} options={{
+            <Stack.Screen name="FinanceAddNewForm" component={FinanceAddNewForm} options={{
                 title: 'AddNew Form',
                 headerShown: true,
                 headerStyle: {
@@ -444,7 +504,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="FinanceAddAmountTable" component={FinanceAddAmountTable} options={{
+            <Stack.Screen name="FinanceAddAmountTable" component={FinanceAddAmountTable} options={{
                 title: 'Add Amount',
                 headerShown: true,
                 headerStyle: {
@@ -452,14 +512,14 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="FinanceDashboard" component={FinanceDashboard} options={{
+            <Stack.Screen name="FinanceDashboard" component={FinanceDashboard} options={{
                 title: 'Finance Dashboard',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
-<Stack.Screen name="MarketingSalesOrderForm" component={MarketingSalesOrderForm} options={{
+            <Stack.Screen name="MarketingSalesOrderForm" component={MarketingSalesOrderForm} options={{
                 title: 'Marketing Sales OrderForm',
                 headerShown: true,
                 headerStyle: {
@@ -468,7 +528,7 @@ const AppNavigation = () => {
             }} />
 
 
-<Stack.Screen name="MarketingAddnewForm" component={MarketingAddnewForm} options={{
+            <Stack.Screen name="MarketingAddnewForm" component={MarketingAddnewForm} options={{
                 title: 'Marketing Add new Form',
                 headerShown: true,
                 headerStyle: {
@@ -477,14 +537,14 @@ const AppNavigation = () => {
             }} />
 
 
-<Stack.Screen name="MarketingHeadExpense" component={MarketingHeadExpense} options={{
+            <Stack.Screen name="MarketingHeadExpense" component={MarketingHeadExpense} options={{
                 title: 'Marketing Head Expense',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
-<Stack.Screen name="MarketingHome" component={MarketingHome} options={{
+            <Stack.Screen name="MarketingHome" component={MarketingHome} options={{
                 title: 'Marketing Home',
                 headerShown: true,
                 headerStyle: {
@@ -492,7 +552,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="MarketingMeetingForm" component={MarketingMeetingForm} options={{
+            <Stack.Screen name="MarketingMeetingForm" component={MarketingMeetingForm} options={{
                 title: 'Marketing Meeting Form',
                 headerShown: true,
                 headerStyle: {
@@ -506,8 +566,8 @@ const AppNavigation = () => {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
-            
-<Stack.Screen name="MarketingExecutiveExpense_Form" component={MarketingExecutiveExpense_Form} options={{
+
+            <Stack.Screen name="MarketingExecutiveExpense_Form" component={MarketingExecutiveExpense_Form} options={{
                 title: 'Marketing Executive Expense Form',
                 headerShown: true,
                 headerStyle: {
@@ -515,14 +575,14 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="MarketingExecutiveHome" component={MarketingExecutiveHome} options={{
+            <Stack.Screen name="MarketingExecutiveHome" component={MarketingExecutiveHome} options={{
                 title: 'Marketing Executive Home',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
-<Stack.Screen name="MarketingExpenseTable" component={MarketingExpenseTable} options={{
+            <Stack.Screen name="MarketingExpenseTable" component={MarketingExpenseTable} options={{
                 title: 'Marketing Expense',
                 headerShown: true,
                 headerStyle: {
@@ -537,7 +597,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="MarketingExecutiveLogin" component={MarketingExecutiveLogin} options={{
+            <Stack.Screen name="MarketingExecutiveLogin" component={MarketingExecutiveLogin} options={{
                 title: 'Marketing Executive Login',
                 headerShown: true,
                 headerStyle: {
@@ -545,7 +605,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="StatemanagerLogin" component={StatemanagerLogin} options={{
+            <Stack.Screen name="StatemanagerLogin" component={StatemanagerLogin} options={{
                 title: 'State manager Login',
                 headerShown: true,
                 headerStyle: {
@@ -553,7 +613,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="MarketingLogin" component={MarketingLogin} options={{
+            <Stack.Screen name="MarketingLogin" component={MarketingLogin} options={{
                 title: 'Marketing Login',
                 headerShown: true,
                 headerStyle: {
@@ -561,7 +621,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="FinanceLogin" component={FinanceLogin} options={{
+            <Stack.Screen name="FinanceLogin" component={FinanceLogin} options={{
                 title: 'Finance Login',
                 headerShown: true,
                 headerStyle: {
@@ -570,7 +630,7 @@ const AppNavigation = () => {
             }} />
 
 
-{/* <Stack.Screen name="MdForm" component={MdForm} options={{
+            {/* <Stack.Screen name="MdForm" component={MdForm} options={{
                 title: 'Md from',
                 headerShown: true,
                 headerStyle: {
@@ -587,7 +647,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="MdCreditLimit" component={MdCreditLimit} options={{
+            <Stack.Screen name="MdCreditLimit" component={MdCreditLimit} options={{
                 title: 'Md Credit Limit',
                 headerShown: true,
                 headerStyle: {
@@ -743,10 +803,10 @@ const AppNavigation = () => {
             }} /> */}
 
 
-<Stack.Screen name="OemWallet" component={OemWallet} options={{
+            <Stack.Screen name="OemWallet" component={OemWallet} options={{
                 headerShown: true,
                 headerTitle: () => (
-                    <View style={{ backgroundColor: '#4e2d87'}}>
+                    <View style={{ backgroundColor: '#4e2d87' }}>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 16 }}>Sandhya</Text>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 14 }}>OEM</Text>
                         <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 12 }}>ID - 1201237</Text>

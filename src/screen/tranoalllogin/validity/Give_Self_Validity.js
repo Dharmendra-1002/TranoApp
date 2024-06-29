@@ -22,10 +22,10 @@ const  Give_Self_Validity = () => {
   }, [isExpanded]);
 
   const fullTableHead = [
-    'S.No', '  Date of Installation  ', ' Vehicle No. ', 'Vehicle Make Model', 'Device IMEI','Customer Name','Dealer Name', 'Fitment Certificate No.', 'Download Certificate'
+    'S.No - ', 'Date of Installation -   ', ' Vehicle No. -  ', 'Vehicle Make Model - ', 'Device IMEI - ','Customer Name - ','Dealer Name - ', 'Fitment Certificate No. - ', 'Download Certificate '
   ];
 
-  const collapsedTableHead = ['S.no ','Date of Installation', ' Vehicle No.'];
+  const collapsedTableHead = ['S.no - ','Date of Installation - ', ' Vehicle No. '];
 
   const fullTableData = [
     ['01', '     21-02-24','      JH12445', 'Pulser', '         Jharkhand','Dharmendra','Mr. Ashwin', 'TRANS001', 'Download here'],

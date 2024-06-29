@@ -339,7 +339,7 @@ function Mddevices(props) {
             <Text className="text-white font-bold text-center">700</Text>
           </View>
 
-          <View className="bg-[#fc8391] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
+          <View className="bg-[#AF4854] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
             <Text className="text-white font-bold text-center">Offline Since 48 Hours</Text>
             <View className="w-[120%] h-[2px] bg-white my-2" />
             <Text className="text-white font-bold text-center">600</Text>
@@ -347,17 +347,21 @@ function Mddevices(props) {
         </View>
 
         <View className="flex-row justify-between py-8 px-6">
-          <View className="bg-[#e7273dfb] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
+          <View className="bg-[#BC2A3C] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
             <Text className="text-white font-bold text-center">Offline Since 72 Hours</Text>
             <View className="w-[120%] h-[2px] bg-white my-2" />
             <Text className="text-white font-bold text-center">550</Text>
           </View>
 
-          <View className="bg-[#D0021B] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
-            <Text className="text-white font-bold text-center">Offline {"\n"} Since 7 Days</Text>
-            <View className="w-[120%] h-[2px] bg-white my-2" />
-            <Text className="text-white font-bold text-center">400</Text>
-          </View>
+          <TouchableOpacity onPress={() => navigation.navigate('Mddevices7day')} className="bg-[#D0021B] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
+    <Text className="text-white font-bold text-center">Offline {"\n"} Since 7 Days</Text>
+    <View className="w-[120%] h-[2px] bg-white my-2" />
+    <Text className="text-white font-bold text-center">400</Text>
+  </TouchableOpacity>
+          
+          
+         
+
         </View>
       </View>
     </SafeAreaView>

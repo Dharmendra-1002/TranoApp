@@ -25,7 +25,7 @@ const MarketingExecutiveOderForm = () => {
     'S.No', ' Order Date ', ' For State ', 'Distributor/Dealer', 'Business Name','Contact Person Name','Designation','Contact No.', 'Email-id', 'Order for device Type','Rate','Total Value', 'Extra Panic Buttons', 'Value of Panic Buttons','Grand Total Value(Rs.)','Payment Terms','Mode of Transport'
   ];
 
-  const collapsedTableHead =['S.no.     ','Order Date     ', 'Executive Name','Rate'];
+  const collapsedTableHead =['S.no -      ','Order Date     ', 'Executive Name','Rate'];
 
   const fullTableData = [
     ['01','             21-02-24', '                Dharmendra', '         Jharkhand', 'TRANS001','J Tech.', 'Mr. Ashwin', ' Marketing Manager', '04590340', 'abc123@gmail.com', '','     10000','10000','','','','','Bus'],

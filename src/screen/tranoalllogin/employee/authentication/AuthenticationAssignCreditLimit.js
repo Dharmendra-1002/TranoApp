@@ -23,11 +23,11 @@ const AuthenticationAssignCreditLimit
         }, [isExpanded]);
 
         const fullTableHead = [
-            'S.No', 'Date', 'OEM Distributor', 'Account ID', 'Transaction ID',
-            'OEM/Distributor Name', 'Credit Limit', 'Used Limit', 'Balance', 'Action', 'View Account'
+            'S.No - ', 'Date - ', 'OEM Distributor - ', 'Account ID - ', 'Transaction ID -',
+            'OEM/Distributor Name - ', 'Credit Limit - ', 'Used Limit - ', 'Balance - ', 'Action - ', 'View Account '
         ];
 
-        const collapsedTableHead = ['S.No', 'OEM/Distributor Name', 'Credit Limit'];
+        const collapsedTableHead = ['S.No - ', 'OEM/Distributor Name - ', 'Credit Limit  '];
 
         const fullTableData = [
             ['01', '2024-05-20', 'Distributor A', 'ACC123', 'TRANS001', 'Dharmendra', '100', '5000', '5000', 'Action', 'View'],

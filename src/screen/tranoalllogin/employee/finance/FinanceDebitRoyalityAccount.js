@@ -22,11 +22,11 @@ const  FinanceDebitRoyalityAccount= () => {
   }, [isExpanded]);
 
   const fullTableHead = [
-    'S.No', '      Debit ID', '           Date', '             Associate Partner/{"\n"} Channel Partner', 'Distributor/Dealer', 'Reference Number'   ,' Debit Amount' ,'     Action'
+    'S.No - ', '      Debit ID - ', '           Date - ', '             Associate Partner/{"\n"} Channel Partner - ', 'Distributor/Dealer - ', 'Reference Number - '   ,' Debit Amount - ' ,'     Action  '
   ];
 
    
-  const collapsedTableHead = ['S.No', 'Associate Partner/{"\n"} Channel Partner','Distributor/Dealer', 'Debit Amount'];
+  const collapsedTableHead = ['S.No - ', 'Associate Partner/{"\n"} Channel Partner - ','Distributor/Dealer - ', 'Debit Amount  '];
 
   const fullTableData = [
     ['01', '123456', '2024-05-20', 'Associate Partner', 'Tripti','10,000000', '10,000', ''],

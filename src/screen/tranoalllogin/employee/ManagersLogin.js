@@ -42,6 +42,15 @@ const ManagersLogin = () => {
                   <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">Marketing Executive </Text>
                 </View>
               </TouchableOpacity>
+
+
+
+
+              <TouchableOpacity onPress={() => navigation.navigate('MdEsimHome')}>
+                <View>
+                  <Text className="bg-violet-950 p-5 rounded-lg text-white m-2 text-center">e-SIM Manager</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>

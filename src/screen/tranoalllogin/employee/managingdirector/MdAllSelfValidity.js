@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ScrollView, View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DataTable } from 'react-native-paper';
-import Orientation from 'react-native-orientation-locker'; // Import Orientation
+import Orientation from 'react-native-orientation-locker';
 
-const WalletSpends = () => {
+const  MdAllSelfValidity = () => {
   const navigation = useNavigation();
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -21,20 +21,42 @@ const WalletSpends = () => {
     };
   }, [isExpanded]);
 
-  const fullTableHead = [
-    'S.No - ', '  Date of Spend -  ', '   Amount(Rs.) -   ', 'Transaction ID - ', 'View Certificate Sheet '
-  ];
+//   const fullTableHead = [
+//     'S.No', 'Oem', 'Name', 'Date of Recharge', 'No of Records', 'Amount(Rs)', 'Transection Id ', 'View Transection sheet',
+//   ];
 
-  const collapsedTableHead = ['S.no. - ', 'Date of Spends - ', 'Amount(Rs.) '];
+const fullTableHead = [ 'S.No', 
+    'OEM/', 
+'Distributor','/Dealer - ',
+    'Name - ' , 
+    'Date of Recharge - ', 
+    'No of Records - ', 
+    'Amount(Rs) - ', 
+    'Transaction Id - ', 
+    'View Transaction sheet '];
+  
+
+
+
+
+  const collapsedTableHead = [ 'S.No', 
+    'OEM/', 
+'Distributor','/Dealer - ',
+    'Name - ' , 
+    'Date of Recharge - ', 
+    'No of Records - ', 
+    'Amount(Rs) - ', 
+    'Transaction Id - ', 
+    'View Transaction sheet '];
 
   const fullTableData = [
-    ['01','21-02-24', 'Dharmendra', '         10,000', 'TRANS001'],
+    ['01', 'OEM', 'ECOGAS','21-02-24', '11:53', '4', '1400', 'NAU36P4'],
+    ['02', 'Distributor ', 'Dhumal Auto Case', '22-02-24', '11:53', '4', '1400', 'NAU36P4'],
+    ['03', 'Dealer', 'Raja motor ',  '23-02-24', '11:53', '4', '1400', 'NAU36P4'],
     // Add more rows as needed
-    ['02',  '21-2-22','Tripti kumari', '       20,000', 'TRANS002'],
-    // Additional rows...
   ];
 
-  const collapsedTableData = fullTableData.map(row => [row[0],row[1], row[3]]);
+  const collapsedTableData = fullTableData.map(row => [row[0], row[1], row[2], row[3], row[7]]);
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', backgroundColor: '#4e2d87' }}>
@@ -42,10 +64,9 @@ const WalletSpends = () => {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <View style={{ flexDirection: 'column' }}>
             <Text style={{ textDecorationLine: 'underline', fontSize: 18, fontWeight: 'bold', marginLeft: 20, marginTop: 20 }}>
-              Spends List
+              Statement
             </Text>
           </View>
-       
         </View>
 
         <View style={styles.container}>
@@ -98,22 +119,19 @@ const styles = StyleSheet.create({
   },
   columnHeader: {
     justifyContent: 'center',
-    paddingHorizontal: 3, // Add horizontal padding for spacing
+    paddingHorizontal: 3,
   },
   evenRow: {
-    backgroundColor: 'rgb(221 214 254)',
-    borderRadius:5,
-  
-    
+    backgroundColor: 'rgb(221, 214, 254)',
+    borderRadius: 5,
   },
   oddRow: {
-    backgroundColor: 'rgb(226 232 240)',
-    borderRadius:5,
+    backgroundColor: 'rgb(226, 232, 240)',
+    borderRadius: 5,
   },
 });
 
-export default WalletSpends;
-
+export default  MdAllSelfValidity;
 
 
 

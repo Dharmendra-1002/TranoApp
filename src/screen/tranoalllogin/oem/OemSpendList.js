@@ -46,10 +46,10 @@ const OemSpendList = () => {
   }, [isExpanded]);
 
   const fullTableHead = [
-    'S.No', '  Date of Spend  ', '   Amount(Rs.)   ', 'Transaction ID', 'View Transaction Sheet'
+    'S.No - ', '  Date of Spend -   ', '   Amount(Rs.)  -  ', 'Transaction ID - ', 'View Transaction Sheet '
   ];
 
-  const collapsedTableHead = ['S.no.', 'Date of Spends', 'Amount(Rs.)'];
+  const collapsedTableHead = ['S.no. - ', 'Date of Spends - ', 'Amount(Rs.) '];
 
   const fullTableData = [
     ['01','21-02-24', 'Dharmendra', '         10,000', 'TRANS001'],

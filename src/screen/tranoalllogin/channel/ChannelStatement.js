@@ -22,11 +22,11 @@ const  ChannelStatement = () => {
   }, [isExpanded]);
 
   const fullTableHead = [
-    'S.No', 'Date', 'OEM Distributor', 'Account ID', 'OEM/Distributor Name','RefrenceUTRNO','Amount Added',
+    'S.No - ', 'Date - ', 'OEM Distributor - ', 'Account ID - ', 'OEM/Distributor Name - ','RefrenceUTRNO - ','Amount Added ',
     'Action'
   ];
 
-  const collapsedTableHead = ['S.No', 'OEM/Distributor Name', 'Amount Added'];
+  const collapsedTableHead = ['S.No - ', 'OEM/Distributor Name - ', 'Amount Added  '];
 
   const fullTableData = [
     ['01', '2024-05-20', 'Distributor A', 'ACC123', 'TRANS001', 'Dharmendra', '100', '5000', '5000', 'Action', 'View'],

@@ -21,31 +21,31 @@
 //         <View className="flex-row justify-between py-12 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Total Devices</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">10,000</Text>
 //           </View>
 
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Installed Devices</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">8,000</Text>
 //           </View>
 //         </View>
 
-//         <View className="w-full px-6 ">
+//         <View className="w-[120%] px-6 ">
 //           <Text className="font-extrabold text-[#4e2d87] text-left">Live Status</Text>
 //         </View>
 
 //         <View className="flex-row justify-between py-8 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Devices Online</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">7,000</Text>
 //           </View>
 
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Devices Offline</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">1,000</Text>
 //           </View>
 //         </View>
@@ -53,13 +53,13 @@
 //         <View className="flex-row justify-between py-8 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 24 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">700</Text>
 //           </View>
 
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 48 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">600</Text>
 //           </View>
 //         </View>
@@ -67,13 +67,13 @@
 //         <View className="flex-row justify-between py-8 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 72 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">550</Text>
 //           </View>
 
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline {"\n"} Since 7 Days</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">400</Text>
 //           </View>
 //         </View>
@@ -99,7 +99,7 @@
 //       {/* Outer View to contain the main content with white background */}
 //       <View className="bg-white w-[92%] h-[95%] rounded-md flex items-center">
 //         {/* Row to hold search input and select menu */}
-//         <View className="w-full px-6 mt-5">
+//         <View className="w-[120%] px-6 mt-5">
 //           <TextInput
 //             className="bg-[#f0f0f0] rounded-lg p-3 mb-3"
 //             placeholder="Search..."
@@ -112,13 +112,13 @@
 //         <View className="flex-row justify-between py-8 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">No of Installed Devices</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">10,000</Text>
 //           </View>
 
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Devices              Online</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">8,000</Text>
 //           </View>
 //         </View>
@@ -128,13 +128,13 @@
 //         <View className="flex-row justify-between py-8 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Devices                Offline</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">7,000</Text>
 //           </View>
 
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 24 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">1,000</Text>
 //           </View>
 //         </View>
@@ -142,13 +142,13 @@
 //         <View className="flex-row justify-between py-8 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 48 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">700</Text>
 //           </View>
 
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 72 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">600</Text>
 //           </View>
 //         </View>
@@ -156,13 +156,13 @@
 //         <View className="flex-row justify-between py-8 px-6">
 //           <View className="bg-[#4e2d87] rounded-lg p-3 w-[48%] h-[90px] flex items-left mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 7 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">550</Text>
             
 //           </View>
 //           <View className="bg-[#fff] rounded-lg p-3 w-[48%] h-[90px] flex items-center mx-2">
 //             <Text className="text-white font-bold text-center">Offline Since 72 Hours</Text>
-//             <View className="w-full h-[2px] bg-white my-2" />
+//             <View className="w-[120%] h-[2px] bg-white my-2" />
 //             <Text className="text-white font-bold text-center">600</Text>
 //           </View>
 
