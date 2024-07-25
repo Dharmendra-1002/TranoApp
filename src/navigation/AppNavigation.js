@@ -92,6 +92,20 @@ import Mddevices7day from '../screen/tranoalllogin/employee/managingdirector/Mdd
 import MdAllSelfValidity from '../screen/tranoalllogin/employee/managingdirector/MdAllSelfValidity';
 import MdEsimHome from '../screen/tranoalllogin/employee/managingdirector/MdEsimHome';
 import MdEsimHomeFrom from '../screen/tranoalllogin/employee/managingdirector/MdEsimHomeFrom';
+import CtplLogin from '../screen/tranoalllogin/CtplLogin';
+import OemRoyalityAccount from '../screen/tranoalllogin/oem/OemRoyalityAccount';
+import Dealer from '../screen/tranoalllogin/dealer/Dealer';
+import DealerHistory from '../screen/tranoalllogin/dealer/DealerHistory';
+import DealerStatement from '../screen/tranoalllogin/dealer/DealerStatement';
+import DealerSpends from '../screen/tranoalllogin/dealer/DealerSpends';
+import DealerRecharge from '../screen/tranoalllogin/dealer/DealerRecharge';
+import DealerRechargeWallet from '../screen/tranoalllogin/dealer/DealerRechargeWallet';
+import Dealerwallet from '../screen/tranoalllogin/dealer/Dealerwallet';
+
+import Dealervltd from '../screen/tranoalllogin/dealer/Dealervltd';
+import Dealer_certificate from '../screen/tranoalllogin/dealer/Dealer_certificate';
+import DistributorRoyalityAccount from '../screen/tranoalllogin/distributor/DistributorRoyalityAccount';
+
 
 const Stack = createStackNavigator();
 const AppNavigation = () => {
@@ -106,6 +120,69 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} /> */}
 
+        
+
+            <Stack.Screen name="OemRoyalityAccount" component={OemRoyalityAccount} options={{
+                title: 'OemRoyalityAccount',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+<Stack.Screen name="DistributorRoyalityAccount" component={DistributorRoyalityAccount} options={{
+                title: 'DistributorRoyalityAccount',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+<Stack.Screen name="Dealerwallet" component={Dealerwallet} options={{
+                title: 'Dealerwallet',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <Stack.Screen name=" CtplLogin" component={CtplLogin} options={{
+                title: 'CtplLogin',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
 
 
             <Stack.Screen name="MdEsimHome" component={MdEsimHome} options={{
@@ -132,12 +209,12 @@ const AppNavigation = () => {
 
 
             <Stack.Screen name="MdEsimHomeFrom" component={MdEsimHomeFrom} options={{
-                    title: 'MdEsimHomeFrom',
-                    headerShown: true,
-                    headerStyle: {
-                        backgroundColor: '#4e2d87'
-                    }, headerTintColor: '#ffff'
-                }} />
+                title: 'MdEsimHomeFrom',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
 
 
 
@@ -415,14 +492,8 @@ const AppNavigation = () => {
 
 
             <Stack.Screen name="DistributorWallet" component={DistributorWallet} options={{
+                title: 'Distributor Wallet',
                 headerShown: true,
-                headerTitle: () => (
-                    <View style={{ backgroundColor: '#4e2d87' }}>
-                        <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 16 }}>Shashi kumar </Text>
-                        <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 14 }}>Distributor </Text>
-                        <Text style={{ color: '#ffffff', fontWeight: "bold", fontSize: 12 }}>ID - 1201237</Text>
-                    </View>
-                ),
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'

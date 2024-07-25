@@ -150,7 +150,7 @@ const Trano_All_Login = () => {
                             </TouchableOpacity>                    
                         </View>            
                         <View>
-                            <TouchableOpacity onPress={() => navigation.navigate('ManagersLogin')} className=' bg-[#4e2d87] w-[100%] h-28 items-center justify-center py-3 rounded-md '>
+                            <TouchableOpacity onPress={() => navigation.navigate('EmployeeLogin')} className=' bg-[#4e2d87] w-[100%] h-28 items-center justify-center py-3 rounded-md '>
                             <View >
                                 <Image
                                         source={require("../../asset/empl.png")}
@@ -170,6 +170,8 @@ const Trano_All_Login = () => {
 
     )
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -463,3 +465,6 @@ const styles = StyleSheet.create({
 })
 
 export default Trano_All_Login;
+
+
+

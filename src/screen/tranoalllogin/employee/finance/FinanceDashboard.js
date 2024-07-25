@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity ,Image} from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native';
@@ -9,37 +9,43 @@ const FinanceDashboard = () => {
     <SafeAreaView className=" flex-1 items-center" style={{ backgroundColor: '#4e2d87' }}>
     <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
         <View className={`w-full h-full bg-white  rounded-lg shadow-lg p-4`}>
-            <View className={`flex justify-center items-center `}>
-        <View className={`w-11/12 h-70 bg-gray-300 rounded-lg shadow-lg mt-6 `}>
-          <View className={`flex justify-center items-center `}>
-            <View className={`w-11/12 h-16 bg-violet-950 m-7 rounded-lg shadow-lg p-4`}>
-              <TouchableOpacity onPress={() => navigation.navigate('FinanceAddAmountTable')}>
-                <View className={`flex justify-center items-center `}>
-                  <Text className="text-white text-lg font-medium">Add Amount</Text>
-                </View>
-              </TouchableOpacity>
+        <View className="flex-row justify-between w-full">
+
+
+          <TouchableOpacity
+            className="w-[45%] h-44 bg-[#4e2d87] rounded-lg items-center justify-center shadow-lg"
+            onPress={() => navigation.navigate('FinanceAddAmountTable')}
+          >
+            <Image
+              source={require("../../../../asset/wallet.png")}
+              resizeMode="contain"
+              className="mt-[-10] w-30 h-20"
+            />
+            <Text className="mt-2 text-white text-lg font-bold">Add Amount</Text>
+            <View className="mt-5 w-4/5 bg-white rounded-sm items-center py-1">
+              <Text className="text-violet-950 font-bold text-base rounded-sm">View Report</Text>
             </View>
+          </TouchableOpacity>
 
-        
-
-            <View className={`w-11/12 h-16 bg-violet-950 m-7 rounded-lg shadow-lg p-4 mt-2`}>
-              <TouchableOpacity onPress={() => navigation.navigate('FinanceDebitRoyalityAccount')}>
-                <View className={`flex justify-center items-center `}>
-                  <Text className="text-white text-lg font-medium">Debit Royality Account</Text>
-                </View>
-              </TouchableOpacity>
+          <TouchableOpacity
+            className="w-[45%] h-44 bg-[#4e2d87] rounded-lg items-center justify-center shadow-lg"
+            onPress={() => navigation.navigate('FinanceDebitRoyalityAccount')}
+          >
+            <Image
+              source={require("../../../../asset/commission.png")}
+              resizeMode="contain"
+              className="w-12 h-12"
+            />
+            <Text className="text-white text-lg font-bold mt-4">Debit Royality Account</Text>
+            <View className="mt-2 w-4/5 bg-white rounded-sm items-center py-1">
+              <Text className="text-violet-950 font-bold text-base rounded-sm">View Report</Text>
             </View>
-
-          </View>
+          </TouchableOpacity>
         </View>
-        </View>
-        </View>
-
-
       </View>
+      </View>
+  </SafeAreaView>
+  );
+};
 
-    </SafeAreaView>
-  )
-}
-
-export default FinanceDashboard
+export default FinanceDashboard;
