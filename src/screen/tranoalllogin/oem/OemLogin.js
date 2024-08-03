@@ -86,7 +86,7 @@ const OemLogin = () => {
     .then(data => {
       if (data.code === '200') {
         Alert.alert('Login Successful');
-        navigation.navigate('OemWallet', { token: data.token });
+        navigation.navigate('OemWallet');
       } else {
         Alert.alert('Login Failed', data.message);
       }

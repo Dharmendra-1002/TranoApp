@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import TouchID from 'react-native-touch-id';
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const PasswordInput = ({ value, onChangeText }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +43,7 @@ const PasswordInput = ({ value, onChangeText }) => {
   );
 };
 
-const  WalletLogin = () => {
+const WalletLogin = () => {
   const navigation = useNavigation();
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
@@ -67,6 +69,34 @@ const  WalletLogin = () => {
       .catch(error => {
         Alert.alert('Authentication Failed');
       });
+  };
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://testing-only-erp-api.containe.in/api/Account/Login', {
+        userName: userId,
+        password: password
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx'
+        }
+      });
+      
+      const data = response.data;
+      
+      if (data.code === '200') {
+        console.log('=================', data.token);
+        await AsyncStorage.setItem('userToken', data.token);
+        Alert.alert('Login Successful');
+        
+        navigation.navigate('WalletHome');
+      } else {
+        Alert.alert('Login Failed', data.message);
+      }
+    } catch (error) {
+      Alert.alert('Login Error', error.message);
+    }
   };
 
   return (
@@ -112,7 +142,7 @@ const  WalletLogin = () => {
               </TouchableOpacity>
 
               <View className='items-center justify-center'>
-                <TouchableOpacity onPress={() => navigation.navigate('Dealerwallet')} className='bg-amber-500 rounded-lg py-2.5 w-[100%]'>
+                <TouchableOpacity onPress={handleLogin} className='bg-amber-500 rounded-lg py-2.5 w-[100%]'>
                   <Text className="text-center text-white text-lg font-medium">Login</Text>
                 </TouchableOpacity>
               </View>
@@ -123,7 +153,6 @@ const  WalletLogin = () => {
                 </TouchableOpacity>
               </View>
 
-             
             </View>
           </View>
         </View>
@@ -132,4 +161,8 @@ const  WalletLogin = () => {
   );
 }
 
-export default  WalletLogin;
+export default WalletLogin;
+
+
+
+

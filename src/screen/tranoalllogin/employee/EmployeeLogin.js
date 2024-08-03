@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import TouchID from 'react-native-touch-id';
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const PasswordInput = ({ value, onChangeText }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -69,18 +71,31 @@ const EmployeeLogin = () => {
       });
   };
 
-  const handleLogin = () => {
-    if (userId === 'anand' && password === '123456') {
-      Alert.alert('Login Successful');
-      navigation.navigate('Mdhome');
-    } else if (userId === 'Authentication' && password === '123456') {
-      Alert.alert('Login Successful');
-      navigation.navigate('AuthenticationCreditLimit');
-    } else if (userId === 'Finance' && password === '123456') {
-      Alert.alert('Login Successful');
-      navigation.navigate('FinanceDashboard');
-    } else {
-      Alert.alert('Login Failed', 'Invalid user ID or password');
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://testing-only-erp-api.containe.in/api/Account/Login', {
+        userName: userId,
+        password: password
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx'
+        }
+      });
+      
+      const data = response.data;
+      
+      if (data.code === '200') {
+        console.log('=================', data.token);
+        await AsyncStorage.setItem('userToken', data.token);
+        Alert.alert('Login Successful');
+        
+        navigation.navigate('Mdhome');
+      } else {
+        Alert.alert('Login Failed', data.message);
+      }
+    } catch (error) {
+      Alert.alert('Login Error', error.message);
     }
   };
 
@@ -147,6 +162,11 @@ const EmployeeLogin = () => {
 }
 
 export default EmployeeLogin;
+
+
+
+
+
 
 
 
