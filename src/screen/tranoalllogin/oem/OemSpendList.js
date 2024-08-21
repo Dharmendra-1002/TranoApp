@@ -29,9 +29,6 @@ const OemSpendList = () => {
   };
   
   
-  
-  
-  
   // useEffect to manage orientation when component mounts or is unmounted
   useEffect(() => {
     if (isExpanded) {
@@ -100,38 +97,13 @@ const OemSpendList = () => {
 
 {/* {end calendar code} */}
 
-        <TouchableOpacity>
-          
-         
-          
+        <TouchableOpacity>     
           <View className="mt-5">
           {/* <Button title="DOWNLOAD PDF" color="#4e2d87" /> */}
           <Text className="bg-yellow-300 text-center font-black p-3 rounded-lg "> DOWNLOAD PDF</Text>
        
           </View>
         </TouchableOpacity>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <View style={styles.container}>
           <TouchableOpacity onPress={() => setIsExpanded(!isExpanded)} style={{ marginBottom: 10 }}>
             <Text style={{ color: '#4e2d87', fontSize: 16 }}>{isExpanded ? 'Collapse' : 'Expand'}</Text>

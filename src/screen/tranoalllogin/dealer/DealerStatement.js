@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { ScrollView, View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { DataTable } from 'react-native-paper';
-import Orientation from 'react-native-orientation-locker'; // Import Orientation
+import Orientation from 'react-native-orientation-locker';
+import Icon from 'react-native-vector-icons/Ionicons'; // Import Orientation
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
+import { jwtDecode } from "jwt-decode";
+import { decode } from "base-64";
+
+global.atob = decode;
 
 const DealerStatement = () => {
   const navigation = useNavigation();

@@ -84,6 +84,7 @@ const WalletLogin = () => {
       });
       
       const data = response.data;
+      console.log('data=================',data)
       
       if (data.code === '200') {
         console.log('=================', data.token);

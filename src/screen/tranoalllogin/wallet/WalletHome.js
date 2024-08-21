@@ -18,9 +18,16 @@ const WalletHome = () => {
   //const [decodedToken, setDecodedToken] = useState(null);
   const navigation = useNavigation();
   const [data, setData] = useState(null);
+  console.log('====================================');
+  console.log('data=======', data);
+  console.log('====================================');
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(null);
-  //const [userId, setUserId] = useState(null);
+  console.log('====================================');
+  console.log('token==========', token);
+  console.log('====================================');
+
+  const [userId, setUserId] = useState(null);
 
   const [isCreditLimitVisible, setCreditLimitVisible] = useState(false);
   const [isCreditLimitVisibles, setCreditLimitVisibles] = useState(false);
@@ -62,13 +69,14 @@ const WalletHome = () => {
           const decodedToken = jwtDecode(token);
           //console.log(decodedToken);
           const userId = decodedToken.UserId;
+
           //console.warn('Error fetching Wallet data:',myId);
 
 
 
           // const storedloginUserID = await AsyncStorage.getItem('loginUserID');
           const response = await axios.get(
-            'http://testing-only-erp-api.containe.in/api/Wallet/GetWalletDashboard?id='+userId,
+            'http://testing-only-erp-api.containe.in/api/Wallet/GetWalletDashboard?id=' + userId,
             {
               headers: {
                 'Authorization': `Bearer ${token}`,
@@ -77,8 +85,9 @@ const WalletHome = () => {
             }
           );
           setData(response.data);
+          setUserId(userId);
         } catch (error) {
-          console.warn('Error fetching Wallet data:',error);
+          console.warn('Error fetching Wallet data:', error);
         } finally {
           setLoading(false);
         }
@@ -95,12 +104,12 @@ const WalletHome = () => {
   return (
 
     <SafeAreaView >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#4e2d87' }} >
+      <ScrollView showsVerticalScrollIndicator={false} >
+        <View style={{ flex: 1, alignItems: 'center', backgroundColor: '#4e2d87', justifyContent: 'center' }} >
 
 
-          <View style={{ backgroundColor: 'white', width: '92%', height: '98%', borderRadius: 8, marginTop: 5 }}>
-            <Text className="text-violet-950 text-left text-lg ml-3"> welcome      {'\n'} {data?.usersBusinessName ?? 'N/A'}</Text>
+          <View style={{ backgroundColor: 'white', width: '92%', height: '98%', borderRadius: 8, marginTop: 5, }}>
+            <Text className="text-violet-950 text-left text-lg ml-3"> Welcome      {'\n'} {data?.usersBusinessName ?? 'N/A'}</Text>
 
             <Text className="text-violet-950 text-left text-xs ml-3"></Text>
             <Text className="text-violet-950 text-left text-xs ml-3"></Text>
@@ -135,7 +144,8 @@ const WalletHome = () => {
 
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 2 }}>
-              <TouchableOpacity onPress={() => navigation.navigate('OemStatement')}>
+
+              <TouchableOpacity onPress={() => navigation.navigate('WalletStatement', { token, userId })}>
                 <View style={{ width: 150, paddingVertical: 20, alignItems: 'center', borderRadius: 8, backgroundColor: '#4e2d87' }}>
 
                   <Image className="w-12 h-12 mt-1"
@@ -145,7 +155,7 @@ const WalletHome = () => {
                   <Text style={{ color: 'white', fontSize: 18, margin: 4, textAlign: 'center' }}>STATEMENT</Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => navigation.navigate('OemRechargeList')}>
+              <TouchableOpacity onPress={() => navigation.navigate('WalletRecharges')}>
                 <View style={{ width: 150, paddingVertical: 20, alignItems: 'center', borderRadius: 8, backgroundColor: '#4e2d87' }}>
                   <Image className="w-12 h-12 mt-1"
                     source={require("../../../asset/recycling.png")}
@@ -156,7 +166,7 @@ const WalletHome = () => {
               </TouchableOpacity>
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', marginTop: 16 }}>
-              <TouchableOpacity onPress={() => navigation.navigate('OemSpendList')}>
+              <TouchableOpacity onPress={() => navigation.navigate('WalletSpends', { token })}>
                 <View style={{ width: 150, paddingVertical: 20, alignItems: 'center', borderRadius: 8, backgroundColor: '#4e2d87' }}>
                   <Image className="w-12 h-12 mt-1"
                     source={require("../../../asset/payroll.png")}
@@ -166,7 +176,7 @@ const WalletHome = () => {
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => navigation.navigate('OemHistory')}>
+              <TouchableOpacity onPress={() => navigation.navigate('WalletHistory', { token , userId })}>
                 <View style={{ width: 150, paddingVertical: 20, alignItems: 'center', borderRadius: 8, backgroundColor: '#4e2d87' }}>
                   <Image className="w-12 h-12 mt-1"
                     source={require("../../../asset/history.png")}
@@ -176,10 +186,7 @@ const WalletHome = () => {
                 </View>
               </TouchableOpacity>
             </View>
-
-
-
-
+            
             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
               <View style={{ width: '90%', height: 200, margin: 40, borderRadius: 8, shadowColor: '#000', shadowOpacity: 0.1, shadowOffset: { width: 0, height: 2 }, shadowRadius: 8, padding: 16, backgroundColor: '#4e2d87' }}>
                 <View>
@@ -219,11 +226,6 @@ const WalletHome = () => {
 }
 
 export default WalletHome;
-
-
-
-
-
 
 
 

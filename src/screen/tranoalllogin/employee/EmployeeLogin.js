@@ -90,7 +90,7 @@ const EmployeeLogin = () => {
         await AsyncStorage.setItem('userToken', data.token);
         Alert.alert('Login Successful');
         
-        navigation.navigate('Mdhome');
+        navigation.navigate('Root',{screen:'Mdhome'});
       } else {
         Alert.alert('Login Failed', data.message);
       }

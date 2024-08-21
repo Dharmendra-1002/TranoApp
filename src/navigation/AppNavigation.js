@@ -105,12 +105,14 @@ import Dealerwallet from '../screen/tranoalllogin/dealer/Dealerwallet';
 import Dealervltd from '../screen/tranoalllogin/dealer/Dealervltd';
 import Dealer_certificate from '../screen/tranoalllogin/dealer/Dealer_certificate';
 import DistributorRoyalityAccount from '../screen/tranoalllogin/distributor/DistributorRoyalityAccount';
+import Trano_All_Login from '../screen/tranoalllogin/Trano_All_Login';
 
 
 const Stack = createStackNavigator();
 const AppNavigation = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
+             <Stack.Screen name="Trano_All_Login" component={Trano_All_Login}/>
             <Stack.Screen name="Root" component={DrawerNavigation} />
             <Stack.Screen name="Trano" component={Home} />
             {/* <Stack.Screen name="HomeWallet" component={HomeWallet} options={{
@@ -735,7 +737,7 @@ const AppNavigation = () => {
 
             <Stack.Screen name="Mdhome" component={Mdhome} options={{
                 title: 'Md home',
-                headerShown: true,
+                headerShown: false,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
