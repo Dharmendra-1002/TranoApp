@@ -106,13 +106,15 @@ import Dealervltd from '../screen/tranoalllogin/dealer/Dealervltd';
 import Dealer_certificate from '../screen/tranoalllogin/dealer/Dealer_certificate';
 import DistributorRoyalityAccount from '../screen/tranoalllogin/distributor/DistributorRoyalityAccount';
 import Trano_All_Login from '../screen/tranoalllogin/Trano_All_Login';
+import Header from '../component/Header';
+
 
 
 const Stack = createStackNavigator();
 const AppNavigation = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
-             <Stack.Screen name="Trano_All_Login" component={Trano_All_Login}/>
+            <Stack.Screen name="Trano_All_Login" component={Trano_All_Login} />
             <Stack.Screen name="Root" component={DrawerNavigation} />
             <Stack.Screen name="Trano" component={Home} />
             {/* <Stack.Screen name="HomeWallet" component={HomeWallet} options={{
@@ -122,7 +124,25 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} /> */}
 
-        
+
+            <Stack.Screen name="Header" component={Header} options={{
+                title: 'Header',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+
+
+
+
+
 
             <Stack.Screen name="OemRoyalityAccount" component={OemRoyalityAccount} options={{
                 title: 'OemRoyalityAccount',
@@ -132,7 +152,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="DistributorRoyalityAccount" component={DistributorRoyalityAccount} options={{
+            <Stack.Screen name="DistributorRoyalityAccount" component={DistributorRoyalityAccount} options={{
                 title: 'DistributorRoyalityAccount',
                 headerShown: true,
                 headerStyle: {
@@ -140,43 +160,13 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-<Stack.Screen name="Dealerwallet" component={Dealerwallet} options={{
+            <Stack.Screen name="Dealerwallet" component={Dealerwallet} options={{
                 title: 'Dealerwallet',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <Stack.Screen name=" CtplLogin" component={CtplLogin} options={{
                 title: 'CtplLogin',
@@ -203,13 +193,6 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-
-
-
-
-
-
-
             <Stack.Screen name="MdEsimHomeFrom" component={MdEsimHomeFrom} options={{
                 title: 'MdEsimHomeFrom',
                 headerShown: true,
@@ -217,18 +200,6 @@ const AppNavigation = () => {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
             }} />
-
-
-
-
-
-
-
-
-
-
-
-
 
             <Stack.Screen name="Mddevices7day" component={Mddevices7day} options={{
                 title: 'Mddevices7day',
@@ -728,7 +699,7 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
             <Stack.Screen name="WalletLogin" component={WalletLogin} options={{
-                title: 'Wallet Login',
+                title: ' ',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
@@ -772,7 +743,7 @@ const AppNavigation = () => {
 
             <Stack.Screen name="WalletHome" component={WalletHome} options={{
                 title: 'Wallet Home',
-                headerShown: true,
+                headerShown: false,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
                 }, headerTintColor: '#ffff'
@@ -923,7 +894,7 @@ const AppNavigation = () => {
             }} />
 
             <Stack.Screen name="AssociateLogin" component={AssociateLogin} options={{
-                title: 'Associate Partner',
+                title: 'Associate Login',
                 headerShown: true,
                 headerStyle: {
                     backgroundColor: '#4e2d87'
