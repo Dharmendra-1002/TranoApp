@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
-
 import { View, Text, TextInput, Button, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import ImageCropPicker from 'react-native-image-crop-picker';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-
-
 const Technicianinstallationform = () => {
-
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
+        imei: '',
+        state: '',
+        district: '',
+        rtoDivision: '',
+        vehicleBirth: '',
+        vehicleNo: '',
+        vehicleType: '',
+        vehicleMake: '',
+        vehicleModel: '',
+        engineNumber: '',
+        chasisNumber: '',
+        sosButtonCount: '',
         // Add more fields as needed
     });
 
@@ -24,8 +30,9 @@ const Technicianinstallationform = () => {
 
     const handleSubmit = () => {
         // Implement your form submission logic here
-        console.log(formData);
+        console.log('Submitted Form Data:', formData);
     };
+
     const [image, setImage] = useState(null);
 
     const selectImage = async () => {
@@ -48,17 +55,12 @@ const Technicianinstallationform = () => {
     };
 
     return (
-        <SafeAreaView className=" flex-1 items-center" style={{ backgroundColor: '#4e2d87' }}>
-
-
-
+        <SafeAreaView className="flex-1 items-center" style={{ backgroundColor: '#4e2d87' }}>
             <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}>
                     <View style={{ padding: 20 }}>
-
-
                         <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>IMEI</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -68,13 +70,13 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('imei', text)}
+                            placeholder="Enter IMEI"
+                            className="mt-3 mr-5 ml-5"
                         />
 
                         <Text style={{ fontSize: 20, color: '#4e2d87' }}>Rto Details</Text>
                         <Text style={{ fontSize: 15, color: "Black", marginTop: 5, marginLeft: 22 }}>State</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -84,13 +86,12 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('state', text)}
+                            placeholder="Enter State"
+                            className="mt-3 mr-5 ml-5"
                         />
 
-
                         <Text style={{ fontSize: 15, color: "Black", marginTop: 5, marginLeft: 22 }}>District</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -100,12 +101,12 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('district', text)}
+                            placeholder="Enter District"
+                            className="mt-3 mr-5 ml-5"
                         />
 
                         <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>RTO Division</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -115,29 +116,13 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
-                        />
-
-
-                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>District</Text>
-
-                        <TextInput
-                            style={{
-                                borderWidth: 1,
-                                borderColor: 'black',
-                                padding: 10,
-                                borderRadius: 5,
-                                backgroundColor: 'white',
-                                marginTop: 5,
-                            }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('rtoDivision', text)}
+                            placeholder="Enter RTO Division"
+                            className="mt-3 mr-5 ml-5"
                         />
 
                         <Text style={{ fontSize: 20, color: '#4e2d87' }}>Add Vehicle Details</Text>
-                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Vehicle birth</Text>
-
+                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Vehicle Birth</Text>
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -147,14 +132,12 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('vehicleBirth', text)}
+                            placeholder="Enter Vehicle Birth"
+                            className="mt-3 mr-5 ml-5"
                         />
-
-
 
                         <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Vehicle No</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -164,14 +147,12 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('vehicleNo', text)}
+                            placeholder="Enter Vehicle No"
+                            className="mt-3 mr-5 ml-5"
                         />
-
-
 
                         <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Vehicle Type</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -181,14 +162,15 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('vehicleType', text)}
+                            placeholder="Enter Vehicle Type"
+                            className="mt-3 mr-5 ml-5"
                         />
+
 
 
 
                         <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Vehicle Make</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -198,13 +180,13 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('vehicleMake', text)}
+                            placeholder="Enter Vehicle Make Type"
+                            className="mt-3 mr-5 ml-5"
                         />
 
 
                         <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Vehicle Model</Text>
-
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -214,14 +196,14 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('vehicleModel', text)}
+                            placeholder="Enter Vehicle Model"
+                            className="mt-3 mr-5 ml-5"
                         />
 
 
 
-                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Engine Number</Text>
-
+                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Engine Number </Text>
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -231,13 +213,13 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('engineNumber', text)}
+                            placeholder="Enter Engine Number"
+                            className="mt-3 mr-5 ml-5"
                         />
 
 
-                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Chasis Number</Text>
-
+                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>chasis Number </Text>
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -247,13 +229,13 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('ChasisNumber', text)}
+                            placeholder="Enter chasis Number"
+                            className="mt-3 mr-5 ml-5"
                         />
 
 
-                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>No of SOS/Panic Button</Text>
-
+                        <Text style={{ fontSize: 18, color: "Black", marginTop: 5, marginLeft: 22 }}>Sos Button Count </Text>
                         <TextInput
                             style={{
                                 borderWidth: 1,
@@ -263,12 +245,16 @@ const Technicianinstallationform = () => {
                                 backgroundColor: 'white',
                                 marginTop: 5,
                             }}
-                            onChangeText={(text) => handleInputChange('email', text)}
-                            placeholder="Enter Your Name" className="mt-3 mr-5 ml-5"
+                            onChangeText={(text) => handleInputChange('sosButtonCount', text)}
+                            placeholder="Enter sosButton Count"
+                            className="mt-3 mr-5 ml-5"
                         />
+
+
+
+                        {/* Add the rest of the inputs similarly... */}
 
                         <Text style={{ fontSize: 20, color: '#4e2d87' }}>Upload Documents</Text>
-
                         <Text> * Vehicle Image</Text>
                         <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                             <Button title="Browse" onPress={selectImage} color="green" />
@@ -278,7 +264,7 @@ const Technicianinstallationform = () => {
                         </View>
 
 
-                        <Text> *  Vehicle Rc</Text>
+                        <Text> * Vehicle Rc</Text>
                         <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                             <Button title="Browse" onPress={selectImage} color="green" />
                             <View style={{ marginLeft: 10 }}>
@@ -287,7 +273,8 @@ const Technicianinstallationform = () => {
                         </View>
 
 
-                        <Text> * Vehicle Device image</Text>
+
+                        <Text> * Vehicle Device Image</Text>
                         <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                             <Button title="Browse" onPress={selectImage} color="green" />
                             <View style={{ marginLeft: 10 }}>
@@ -296,7 +283,8 @@ const Technicianinstallationform = () => {
                         </View>
 
 
-                        <Text> Customer Aadhar Card</Text>
+
+                        <Text> * Customer Aadhar Card</Text>
                         <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                             <Button title="Browse" onPress={selectImage} color="green" />
                             <View style={{ marginLeft: 10 }}>
@@ -305,16 +293,17 @@ const Technicianinstallationform = () => {
                         </View>
 
 
-                        <Text> Customer Pan Card </Text>
+
+                        <Text> * Customer Pan Card</Text>
                         <View style={{ flexDirection: 'row', marginBottom: 20 }}>
                             <Button title="Browse" onPress={selectImage} color="green" />
                             <View style={{ marginLeft: 10 }}>
                                 <Button title="Clear" onPress={clearImage} color="red" />
                             </View>
                         </View>
+                        {/* Other Image upload buttons... */}
 
-                        <Button title="Submit" color="green" />
-
+                        <Button title="Submit" color="green" onPress={handleSubmit} />
 
                         {image && <Image source={image} style={{ width: 200, height: 200 }} />}
                     </View>
@@ -325,10 +314,6 @@ const Technicianinstallationform = () => {
 };
 
 export default Technicianinstallationform;
-
-
-
-
 
 
 

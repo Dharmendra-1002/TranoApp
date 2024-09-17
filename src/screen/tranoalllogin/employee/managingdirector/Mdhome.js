@@ -168,7 +168,14 @@ const Mdhome = () => {
                 buttonNumber={esimData ? esimData.allEsimCount : "N/A"}
                 imageSource={require('../../../../asset/electronic-board.png')}
                 imageStyle={{ width: 48, height: 48, marginTop: 10 }}
+                token={token}   // Pass token prop
+                userId={userId}
               />
+
+
+
+
+
               <CardButton
                 navigation={navigation}
                 navigateTo='Mddevices'
@@ -176,6 +183,8 @@ const Mdhome = () => {
                 buttonNumber={esimData ? esimData.allDevicesCount : "N/A"}
                 imageSource={require('../../../../asset/tracking-app.png')}
                 imageStyle={{ width: 48, height: 48, marginTop: 10 }}
+                token={token}   // Pass token prop
+                userId={userId}
               />
             </View>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%', marginTop: 20 }}>
@@ -186,6 +195,8 @@ const Mdhome = () => {
                 buttonNumber="57,476"
                 imageSource={require("../../../../asset/wallet1.png")}
                 imageStyle={{ width: 48, height: 48, marginTop: 10 }}
+                token={token}   // Pass token prop
+                userId={userId}
               />
               
             </View>

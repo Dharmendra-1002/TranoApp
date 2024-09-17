@@ -1,290 +1,139 @@
-
-import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Image, img, SafeAreaView } from "react-native";
+import React, { useState, useEffect } from 'react';
+import { View, Text, TouchableOpacity, Image, SafeAreaView , ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
+import { jwtDecode } from "jwt-decode";
+import { decode } from "base-64";
 
 
-function TechnicianHome(props) {
-    const navigation = useNavigation();
-    return (
-        <SafeAreaView className=" flex-1 items-center" style={{backgroundColor: '#4e2d87'}}>
-        <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
-            <View style={styles.container}>
-                <View style={styles.rect2}>
-                    <View style={styles.rect1}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Technicianinstallationform')}>
-                            <View style={styles.imageRow}>
-                                <Image
-                                    source={require("../../../asset/check.png")}
-                                    resizeMode="contain"
-                                    style={styles.image}
-                                ></Image>
-                                <Text style={styles.loremIpsum2}>Installation{"\n"} Form</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
+
+global.atob = decode;
+
+
+const TechnicianHome = () => {
+  const navigation = useNavigation();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [token, setToken] = useState(null);
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    const fetchToken = async () => {
+      try {
+        const storedToken = await AsyncStorage.getItem('userToken');
+        if (storedToken) {
+          setToken(storedToken);
+        }
+      } catch (error) {
+        console.error('Failed to fetch token:', error);
+      }
+    };
+ 
+    fetchToken();
+  }, []);
+ 
+  useEffect(() => {
+    if (token) {
+      const fetchData = async () => {
+        try {
+          const decodedToken = jwtDecode(token);
+          const userId = decodedToken.UserId;
+ 
+          const response = await axios.get(
+            'http://testing-only-erp-api.containe.in/api/MobileDashboard/GetMyInstallationCounts?userId=' + userId,
+            {
+              headers: {
+                'Authorization': `Bearer ${token}`,
+                'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
+              }
+            }
+          );
+          console.log('API Response:', response.data);
+          setData(response.data);
+          setUserId(userId);
+        } catch (error) {
+          console.warn('Error fetching Wallet data:', error);
+        } finally {
+          setLoading(false);
+        }
+      };
+ 
+      fetchData();
+    }
+  }, [token]);
+ 
+  if (loading) {
+    return <ActivityIndicator size="large" color="#0000ff" />;
+  }
+
+
+
+
+
+  return (
+    <SafeAreaView className="flex-1 items-center bg-[#4e2d87]">
+      <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
+        <View className="flex-1 items-center">
+          {/* First Button */}
+          <View className="w-[334px] h-[203px] bg-white shadow-lg shadow-black rounded-lg mt-12">
+            <View className="w-[311px] h-[171px] bg-[#4e2d87] rounded-lg shadow-lg shadow-black flex-row mt-3 ml-3">
+              <TouchableOpacity onPress={() => navigation.navigate('Technicianinstallationform')}>
+                <View className="flex-row h-[87px] mx-[14px] mt-[43px] mr-[39px]">
+                  <Image
+                    source={require("../../../asset/check.png")}
+                    resizeMode="contain"
+                    className="w-[114px] h-[87px]"
+                  />
+                  <Text className="font-bold text-white text-[24px] ml-6 mt-4">Installation{"\n"}Form</Text>
                 </View>
-                <View style={styles.rect3}>
-                    <View style={styles.loremIpsum3Stack}>
-                        <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')}>
-                            <View style={styles.rect4}>
-                                <View style={styles.myInstallations2Row}>
-                                    <Text style={styles.myInstallations2}>My Installations</Text>
-                                    <View style={styles.rect8}>
-                                        <View style={styles.all3Row}>
-                                            <Text style={styles.all3}>All</Text>
-                                            <Text style={styles.loremIpsum9}>360</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                                <View style={styles.rect5Row}>
-                                    <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')}>
-                                        <View style={styles.rect5}>
-                                            <Text style={styles.today}>Today</Text>
-                                            <Text style={styles.loremIpsum4}>10</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')}>
-                                        <View style={styles.rect6}>
-                                            <Text style={styles.thisWeek}>This{"\n"}Week</Text>
-                                            <Text style={styles.loremIpsum5}>70</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')}>
-                                        <View style={styles.rect7}>
-                                            <Text style={styles.thisMonth}>This{"\n"}Month</Text>
-                                            <Text style={styles.loremIpsum8}>200</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                </View>
+              </TouchableOpacity>
             </View>
-            </View>
-        </SafeAreaView>
+          </View>
 
-    );
+          {/* Second Button */}
+          <View className="w-[334px] h-[313px] bg-[#e9e9e9] rounded-lg shadow-lg shadow-black mt-5">
+            <View className="relative w-[311px] h-[250px] ml-3 mt-6">
+              <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')}>
+                <View className="absolute top-0 left-0 w-[311px] h-[250px] bg-[#4e2d87] rounded-lg">
+                  <View className="flex-row mt-6 mx-3">
+                    <Text className="font-bold text-white text-[18px]">My Installations</Text>
+                    <View className="w-[96px] h-[32px] bg-white rounded-lg flex-row ml-14">
+                      <Text className="font-bold text-black text-[16px] mt-1 ml-3">All</Text>
+                      <Text className="font-bold text-[#4e2d87] text-[20px] ml-3 mt-[-2px]"> {data?.allCount ?? 'N/A'}</Text>
+                    </View>
+                  </View>
+                  <View className="flex-row mt-6 mx-3">
+                    <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')}>
+                      <View className="w-[89px] h-[120px] bg-white rounded-lg">
+                        <Text className="font-bold text-black text-[16px] mt-6 ml-5">Today</Text>
+                        <Text className="font-bold text-[#4e2d87] text-[20px] mt-6 ml-8">{data?.todayCount ?? 'N/A'}</Text>
+                      </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')} className="ml-3">
+                      <View className="w-[89px] h-[120px] bg-white rounded-lg">
+                        <Text className="font-bold text-black text-[16px] mt-3 ml-6">This{"\n"}Week</Text>
+                        <Text className="font-bold text-[#4e2d87] text-[20px] mt-3 ml-7">{data?.thisWeekCount ?? 'N/A'}</Text>
+                      </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('TechnicianCertificate')} className="ml-3">
+                      <View className="w-[89px] h-[120px] bg-white rounded-lg">
+                        <Text className="font-bold text-black text-[16px] mt-3 ml-6">This{"\n"}Month</Text>
+                        <Text className="font-bold text-[#4e2d87] text-[20px] mt-3 ml-7">{data?.thisMonthCount ?? 'N/A'}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center"
-    },
-    rect2: {
-        width: 334,
-        height: 203,
-        backgroundColor: "#ffffff",
-        shadowColor: "rgba(0,0,0,1)",
-        shadowOffset: {
-            width: 3,
-            height: 3
-        },
-        elevation: 30,
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-        marginTop: 50,
-        alignSelf: "center",
-        borderRadius: 15
-    },
-    rect1: {
-        width: 311,
-        height: 171,
-        backgroundColor: "rgba(78,45,135,1)",
-        borderRadius: 15,
-        shadowColor: "rgba(0,0,0,1)",
-        shadowOffset: {
-            width: 3,
-            height: 3
-        },
-        elevation: 30,
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-        flexDirection: "row",
-        marginTop: 15,
-        marginLeft: 13
-    },
-    image: {
-        width: 114,
-        height: 87
-    },
-    loremIpsum2: {
-        fontWeight: "bold",
-        fontFamily: "roboto-700",
-        color: "rgba(255,255,255,1)",
-        fontSize: 24,
-        marginLeft: 23,
-        marginTop: 14
-    },
-    imageRow: {
-        height: 87,
-        flexDirection: "row",
-        flex: 1,
-        marginRight: 39,
-        marginLeft: 14,
-        marginTop: 43
-    },
-    rect3: {
-
-        width: 334,
-        height: 313,
-        backgroundColor: "rgba(233,233,233,1)",
-        borderRadius: 15,
-        shadowColor: "rgba(0,0,0,1)",
-        shadowOffset: {
-            width: 3,
-            height: 3
-        },
-        elevation: 30,
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-        marginTop: 21,
-
-    },
-    loremIpsum3: {
-        top: 8,
-        left: 99,
-        position: "absolute",
-        fontFamily: "roboto-regular",
-        color: "#121212"
-    },
-    rect4: {
-        top: 0,
-        left: 0,
-        width: 311,
-        height: 250,
-        position: "absolute",
-        backgroundColor: "rgba(78,45,135,1)",
-        borderRadius: 15
-    },
-    myInstallations2: {
-        fontWeight: "bold",
-        fontFamily: "roboto-700",
-        color: "rgba(255,255,255,1)",
-        fontSize: 18,
-        marginTop: 5
-    },
-    rect8: {
-        width: 96,
-        height: 32,
-        backgroundColor: "rgba(255,255,255,1)",
-        borderRadius: 15,
-        flexDirection: "row",
-        marginLeft: 56
-    },
-    all3: {
-        fontWeight: "bold",
-        fontFamily: "roboto-700",
-        color: "#121212",
-        fontSize: 16,
-        marginTop: 1
-    },
-    loremIpsum9: {
-        fontWeight: "bold",
-        fontFamily: "roboto-500",
-        color: "rgba(78,45,135,1)",
-        fontSize: 20,
-        marginLeft: 13,
-        marginTop: -2
-    },
-    all3Row: {
-        height: 25,
-        flexDirection: "row",
-        flex: 1,
-        marginRight: 14,
-        marginLeft: 13,
-        marginTop: 4
-    },
-    myInstallations2Row: {
-        height: 32,
-        flexDirection: "row",
-        marginTop: 24,
-        marginLeft: 15,
-        marginRight: 15
-    },
-    rect5: {
-        width: 89,
-        height: 120,
-        backgroundColor: "rgba(255,255,255,1)",
-        borderRadius: 15
-    },
-    today: {
-        fontWeight: "bold",
-        fontFamily: "roboto-500",
-        color: "#121212",
-        fontSize: 16,
-        marginTop: 24,
-        marginLeft: 20
-    },
-    loremIpsum4: {
-        fontWeight: "bold",
-        fontFamily: "roboto-500",
-        color: "rgba(78,45,135,1)",
-        fontSize: 20,
-        marginTop: 27,
-        marginLeft: 31
-    },
-    rect6: {
-        width: 89,
-        height: 120,
-        backgroundColor: "rgba(255,255,255,1)",
-        borderRadius: 15,
-        marginLeft: 11
-    },
-    thisWeek: {
-        fontWeight: "bold",
-        fontFamily: "roboto-500",
-        color: "#121212",
-        fontSize: 16,
-        marginTop: 13,
-        marginLeft: 22
-    },
-    loremIpsum5: {
-        fontWeight: "bold",
-        fontFamily: "roboto-500",
-        color: "rgba(78,45,135,1)",
-        fontSize: 20,
-        marginTop: 18,
-        marginLeft: 30
-    },
-    rect7: {
-        width: 89,
-        height: 120,
-        backgroundColor: "rgba(255,255,255,1)",
-        borderRadius: 15,
-        marginLeft: 10
-    },
-    thisMonth: {
-        fontWeight: "bold",
-        fontFamily: "roboto-500",
-        color: "#121212",
-        fontSize: 16,
-        marginTop: 14,
-        marginLeft: 22
-    },
-    loremIpsum8: {
-        fontWeight: "bold",
-        fontFamily: "roboto-500",
-        color: "rgba(78,45,135,1)",
-        fontSize: 20,
-        marginTop: 17,
-        marginLeft: 28
-    },
-    rect5Row: {
-        height: 120,
-        flexDirection: "row",
-        marginTop: 23,
-        marginLeft: 12,
-        marginRight: 11
-    },
-    loremIpsum3Stack: {
-        width: 311,
-        height: 250,
-        marginTop: 23,
-        marginLeft: 11
-    }
-});
-
 export default TechnicianHome;
+
+
+
