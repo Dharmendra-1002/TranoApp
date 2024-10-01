@@ -78,7 +78,7 @@ const TechnicianHome = () => {
           {/* First Button */}
           <View className="w-[334px] h-[203px] bg-white shadow-lg shadow-black rounded-lg mt-12">
             <View className="w-[311px] h-[171px] bg-[#4e2d87] rounded-lg shadow-lg shadow-black flex-row mt-3 ml-3">
-              <TouchableOpacity onPress={() => navigation.navigate('Technicianinstallationform')}>
+              <TouchableOpacity onPress={() => navigation.navigate('Technicianinstallationform', { token, userId })}>
                 <View className="flex-row h-[87px] mx-[14px] mt-[43px] mr-[39px]">
                   <Image
                     source={require("../../../asset/check.png")}
