@@ -10,6 +10,7 @@ import { useRoute } from '@react-navigation/native';
 import ImageCropPicker from 'react-native-image-crop-picker';
 import { useNavigation } from '@react-navigation/native';
 
+
 const TechnicianInstallationForm = () => {
     const [vehicleType, setVehicleType] = useState('');
     const [imeiData, setImeiData] = useState([]);
@@ -335,7 +336,7 @@ const TechnicianInstallationForm = () => {
             engineNumber: engineNumber,
             chasisNumber: chasisNumber,
             noOfSos: noOfSos
-            
+
         };
 
         try {
@@ -374,243 +375,247 @@ const TechnicianInstallationForm = () => {
 
     return (
         <SafeAreaView className=" flex-1 items-center" style={{ backgroundColor: '#4e2d87' }}>
-           <View className="bg-white w-[92%] h-[95%] rounded-md mt-5 ">
-            <ScrollView>
-            <View className="py-5">
-                <Text style={{ fontSize: 20, color: '#4e2d87' }}>IMEI</Text>
-                <TextInput
-                    mode="outlined"
-                    label="IMEI"
-                    value={imeiText}
-                    onChangeText={handleImeiTextChange}
-                />
+            <View className="bg-white w-[92%] h-[95%] rounded-md mt-5 p-5 ">
+                <ScrollView>
+                    <View className="py-5">
+                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>IMEI</Text>
+                        <TextInput
+                            mode="outlined"
+                            label="IMEI"
+                            value={imeiText}
+                            onChangeText={handleImeiTextChange}
+                        />
 
-                {showImeiSuggestions && imeiData.length > 0 && (
-                    <View style={styles.suggestionsContainer}>
-                        {imeiData.map((item) => (
-                            <TouchableOpacity
-                                key={item} // Use item as the unique key
-                                onPress={() => handleImeiSuggestionSelect(item)}
-                                style={styles.suggestionItem}
-                            >
-                                <Text style={styles.itemText}>{item}</Text>
-                            </TouchableOpacity>
-                        ))}
+                        {showImeiSuggestions && imeiData.length > 0 && (
+                            <View style={styles.suggestionsContainer}>
+                                {imeiData.map((item) => (
+                                    <TouchableOpacity
+                                        key={item} // Use item as the unique key
+                                        onPress={() => handleImeiSuggestionSelect(item)}
+                                        style={styles.suggestionItem}
+                                    >
+                                        <Text style={styles.itemText}>{item}</Text>
+                                    </TouchableOpacity>
+                                ))}
+                            </View>
+                        )}
+
+
+
+                        <Text className=" mt-5" style={{ fontSize: 20, color: '#4e2d87' }}>RTO Details</Text>
+                        <Text style={styles.label}>Select a State:</Text>
+                        <Picker
+                            selectedValue={selectedState}
+                            onValueChange={handleStateChange}
+                            style={styles.picker}
+                        >
+                            <Picker.Item label="Choose a state" value="" />
+                            {states.map((state) => (
+                                <Picker.Item key={state.stateId} label={state.stateName} value={state.stateId} />
+                            ))}
+                        </Picker>
+
+                        <Text style={styles.label}>Select a District:</Text>
+                        <Picker
+                            selectedValue={selectedDistrict}
+                            onValueChange={setSelectedDistrict}
+                            style={styles.picker}
+                        >
+                            <Picker.Item label="Choose a district" value="" />
+                            {districts.map((district) => (
+                                <Picker.Item key={district.districtId} label={district.districtName} value={district.districtName} />
+                            ))}
+                        </Picker>
+
+
+
+
+                        <Text style={styles.label}>Select an RTO Division:</Text>
+                        <Picker
+                            selectedValue={selectedRtoDivision}
+                            onValueChange={setSelectedRtoDivision}
+                            style={styles.picker}
+                        >
+                            <Picker.Item label="Choose an RTO division" value="" />
+                            {rtoDivisions.map((rto) => (
+                                <Picker.Item key={rto.rtaDivisionName} label={rto.rtaDivisionName} value={rto.rtaDivisionName} />
+                            ))}
+                        </Picker>
+                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Add Vehicle Detail</Text>
+
+                        <Text style={styles.label}>Vehicle Birth</Text>
+
+                        <Picker
+                            selectedValue={vehicleType}
+                            onValueChange={(itemValue) => setVehicleType(itemValue)}
+                            style={styles.picker}
+                        >
+                            <Picker.Item label="Select Vehicle Type" value="" />
+                            <Picker.Item label="Old" value="old" />
+                            <Picker.Item label="New" value="new" />
+                        </Picker>
+
+                        <Text style={styles.label}>Vehicle Number</Text>
+
+
+                        <TextInput
+                            mode="outlined"
+                            label="Vehicle Number"
+                            value={VehicleNumberText}
+                            onChangeText={handleVehicleNumberTextChange}
+                        />
+
+                        <Text style={styles.label}>Vehicle Type</Text>
+
+
+
+                        <Picker
+                            selectedValue={vehicleType}
+                            onValueChange={(itemValue) => setVehicleType(itemValue)}
+                            style={styles.picker}
+                        >
+                            <Picker.Item label="Select Vehicle Type" value="" />
+                            {vehicleTypes.map((vehicle) => (
+                                <Picker.Item key={vehicle.id} label={vehicle.name} value={vehicle.id} />
+                            ))}
+                        </Picker>
+
+                        <Text style={styles.label}>Vehicle Make</Text>
+
+                        <TextInput
+                            label="Enter Vehicle Make"
+                            value={vehicleMakeText}
+                            onChangeText={handleVehicleMakeTextChange}
+                            mode="outlined"
+                        />
+                        {showVehicleMakeSuggestions && VehicleMakeData.length > 0 && (
+                            <View style={styles.suggestionsContainer}>
+                                {VehicleMakeData.map((item) => (
+                                    <TouchableOpacity
+                                        key={item}
+                                        onPress={() => handleVehicleMakeSuggestionSelect(item)}
+                                        style={styles.suggestionItem}
+                                    >
+                                        <Text style={styles.itemText}>{item}</Text>
+                                    </TouchableOpacity>
+                                ))}
+                            </View>
+                        )}
+
+                        <Text style={styles.label}>Vehicle Model</Text>
+
+
+
+
+
+                        <TextInput
+                            label="Enter Vehicle Model"
+                            value={vehicleModelText}
+                            onChangeText={handleVehicleModelTextChange}
+                            mode="outlined"
+                        />
+                        {showVehicleModelSuggestions && VehicleModelData.length > 0 && (
+                            <View style={styles.suggestionsContainer}>
+                                {VehicleModelData.map((item) => (
+                                    <TouchableOpacity
+                                        key={item}
+                                        onPress={() => handleVehicleModelSuggestionSelect(item)}
+                                        style={styles.suggestionItem}
+                                    >
+                                        <Text style={styles.itemText}>{item}</Text>
+                                    </TouchableOpacity>
+                                ))}
+                            </View>
+                        )}
+
+
+
+
+                        <Text style={styles.label}>Engine Number</Text>
+
+                        <TextInput
+                            label="Enter Engine Number"
+                            value={engineNumber}
+                            onChangeText={setEngineNumber}
+                            mode="outlined"
+                        />
+
+
+                        <Text style={styles.label}>Chasis Number:</Text>
+                        <TextInput
+
+                            label="Enter Chasis Number"
+                            value={chasisNumber}
+                            onChangeText={setChasisNumber}
+                            mode="outlined"
+                        />
+
+
+                        <Text style={styles.label}>Number of SOS:</Text>
+
+                        <Picker
+                            selectedValue={noOfSos}
+                            onValueChange={(itemValue) => setNoOfSos(itemValue)}
+                            style={styles.picker}
+                        >
+                            <Picker.Item label="Select Number of SOS" value="" />
+                            {Array.from({ length: 10 }, (_, i) => (
+                                <Picker.Item key={i + 1} label={`${i + 1}`} value={`${i + 1}`} />
+                            ))}
+                        </Picker>
+
+                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Upload Documents</Text>
+
+                        <Text> * Vehicle Image</Text>
+                        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+                            <Button title="Browse" onPress={selectImage} color="green" />
+                            <View style={{ marginLeft: 10 }}>
+                                <Button title="Clear" onPress={clearImage} color="red" />
+                            </View>
+                        </View>
+
+
+                        <Text> *  Vehicle Rc</Text>
+                        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+                            <Button title="Browse" onPress={selectImage} color="green" />
+                            <View style={{ marginLeft: 10 }}>
+                                <Button title="Clear" onPress={clearImage} color="red" />
+                            </View>
+                        </View>
+
+
+                        <Text> * Vehicle Device image</Text>
+                        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+                            <Button title="Browse" onPress={selectImage} color="green" />
+                            <View style={{ marginLeft: 10 }}>
+                                <Button title="Clear" onPress={clearImage} color="red" />
+                            </View>
+                        </View>
+
+
+                        <Text> Customer Aadhar Card</Text>
+                        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+                            <Button title="Browse" onPress={selectImage} color="green" />
+                            <View style={{ marginLeft: 10 }}>
+                                <Button title="Clear" onPress={clearImage} color="red" />
+                            </View>
+                        </View>
+
+
+                        <Text> Customer Pan Card </Text>
+                        <View style={{ flexDirection: 'row', marginBottom: 20 }}>
+                            <Button title="Browse" onPress={selectImage} color="green" />
+                            <View style={{ marginLeft: 10 }}>
+                                <Button title="Clear" onPress={clearImage} color="red" />
+                            </View>
+                        </View>
+
+
+                        <Button title="Submit" onPress={handleSubmit} />
+
+
                     </View>
-                )}
-
-
-
-                <Text style={{ fontSize: 20, color: '#4e2d87' }}>RTO Details</Text>
-                <Text style={styles.label}>Select a State:</Text>
-                <Picker
-                    selectedValue={selectedState}
-                    onValueChange={handleStateChange}
-                    style={styles.picker}
-                >
-                    <Picker.Item label="Choose a state" value="" />
-                    {states.map((state) => (
-                        <Picker.Item key={state.stateId} label={state.stateName} value={state.stateId} />
-                    ))}
-                </Picker>
-
-                <Text style={styles.label}>Select a District:</Text>
-                <Picker
-                    selectedValue={selectedDistrict}
-                    onValueChange={setSelectedDistrict}
-                    style={styles.picker}
-                >
-                    <Picker.Item label="Choose a district" value="" />
-                    {districts.map((district) => (
-                        <Picker.Item key={district.districtId} label={district.districtName} value={district.districtName} />
-                    ))}
-                </Picker>
-
-
-
-
-                <Text style={styles.label}>Select an RTO Division:</Text>
-                <Picker
-                    selectedValue={selectedRtoDivision}
-                    onValueChange={setSelectedRtoDivision}
-                    style={styles.picker}
-                >
-                    <Picker.Item label="Choose an RTO division" value="" />
-                    {rtoDivisions.map((rto) => (
-                        <Picker.Item key={rto.rtaDivisionName} label={rto.rtaDivisionName} value={rto.rtaDivisionName} />
-                    ))}
-                </Picker>
-                <Text style={{ fontSize: 20, color: '#4e2d87' }}>Add Vehicle Detail</Text>
-
-                <Text style={styles.label}>Vehicle Birth</Text>
-
-                <Picker
-                    selectedValue={vehicleType}
-                    onValueChange={(itemValue) => setVehicleType(itemValue)}
-                    style={styles.picker}
-                >
-                    <Picker.Item label="Select Vehicle Type" value="" />
-                    <Picker.Item label="Old" value="old" />
-                    <Picker.Item label="New" value="new" />
-                </Picker>
-
-                <Text style={styles.label}>Vehicle Number</Text>
-
-
-                <TextInput
-                    mode="outlined"
-                    label="Vehicle Number"
-                    value={VehicleNumberText}
-                    onChangeText={handleVehicleNumberTextChange}
-                />
-
-                <Text style={styles.label}>Vehicle Type</Text>
-
-
-
-                <Picker
-                    selectedValue={vehicleType}
-                    onValueChange={(itemValue) => setVehicleType(itemValue)}
-                    style={styles.picker}
-                >
-                    <Picker.Item label="Select Vehicle Type" value="" />
-                    {vehicleTypes.map((vehicle) => (
-                        <Picker.Item key={vehicle.id} label={vehicle.name} value={vehicle.id} />
-                    ))}
-                </Picker>
-
-                <Text style={styles.label}>Vehicle Make</Text>
-
-                <TextInput
-                    label="Enter Vehicle Make"
-                    value={vehicleMakeText}
-                    onChangeText={handleVehicleMakeTextChange}
-                    mode="outlined"
-                />
-                {showVehicleMakeSuggestions && VehicleMakeData.length > 0 && (
-                    <View style={styles.suggestionsContainer}>
-                        {VehicleMakeData.map((item) => (
-                            <TouchableOpacity
-                                key={item}
-                                onPress={() => handleVehicleMakeSuggestionSelect(item)}
-                                style={styles.suggestionItem}
-                            >
-                                <Text style={styles.itemText}>{item}</Text>
-                            </TouchableOpacity>
-                        ))}
-                    </View>
-                )}
-
-                <Text style={styles.label}>Vehicle Model</Text>
-
-
-
-
-
-                <TextInput
-                    label="Enter Vehicle Model"
-                    value={vehicleModelText}
-                    onChangeText={handleVehicleModelTextChange}
-                    mode="outlined"
-                />
-                {showVehicleModelSuggestions && VehicleModelData.length > 0 && (
-                    <View style={styles.suggestionsContainer}>
-                        {VehicleModelData.map((item) => (
-                            <TouchableOpacity
-                                key={item}
-                                onPress={() => handleVehicleModelSuggestionSelect(item)}
-                                style={styles.suggestionItem}
-                            >
-                                <Text style={styles.itemText}>{item}</Text>
-                            </TouchableOpacity>
-                        ))}
-                    </View>
-                )}
-
-
-
-
-                <Text style={styles.label}>Engine Number</Text>
-
-                <TextInput
-                    label="Enter Engine Number"
-                    value={engineNumber}
-                    onChangeText={setEngineNumber}
-                    mode="outlined"
-                />
-
-
-                <Text style={styles.label}>Chasis Number:</Text>
-                <TextInput
-
-                    label="Enter Chasis Number"
-                    value={chasisNumber}
-                    onChangeText={setChasisNumber}
-                    mode="outlined"
-                />
-
-
-                <Text style={styles.label}>Number of SOS:</Text>
-                <TextInput
-
-                    label="Enter Number of SOS"
-                    value={noOfSos}
-                    onChangeText={setNoOfSos}
-                    mode="outlined"
-                />
-
-                <Text style={{ fontSize: 20, color: '#4e2d87' }}>Upload Documents</Text>
-
-                <Text> * Vehicle Image</Text>
-                <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-                    <Button title="Browse" onPress={selectImage} color="green" />
-                    <View style={{ marginLeft: 10 }}>
-                        <Button title="Clear" onPress={clearImage} color="red" />
-                    </View>
-                </View>
-
-
-                <Text> *  Vehicle Rc</Text>
-                <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-                    <Button title="Browse" onPress={selectImage} color="green" />
-                    <View style={{ marginLeft: 10 }}>
-                        <Button title="Clear" onPress={clearImage} color="red" />
-                    </View>
-                </View>
-
-
-                <Text> * Vehicle Device image</Text>
-                <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-                    <Button title="Browse" onPress={selectImage} color="green" />
-                    <View style={{ marginLeft: 10 }}>
-                        <Button title="Clear" onPress={clearImage} color="red" />
-                    </View>
-                </View>
-
-
-                <Text> Customer Aadhar Card</Text>
-                <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-                    <Button title="Browse" onPress={selectImage} color="green" />
-                    <View style={{ marginLeft: 10 }}>
-                        <Button title="Clear" onPress={clearImage} color="red" />
-                    </View>
-                </View>
-
-
-                <Text> Customer Pan Card </Text>
-                <View style={{ flexDirection: 'row', marginBottom: 20 }}>
-                    <Button title="Browse" onPress={selectImage} color="green" />
-                    <View style={{ marginLeft: 10 }}>
-                        <Button title="Clear" onPress={clearImage} color="red" />
-                    </View>
-                </View>
-
-
-                <Button title="Submit" onPress={handleSubmit} />
-
-
-                </View>
-            </ScrollView>
+                </ScrollView>
             </View>
         </SafeAreaView>
     );
@@ -625,15 +630,22 @@ const styles = StyleSheet.create({
         marginTop: 10,
         fontSize: 18,
         fontWeight: 'bold',
+        color: 'black'
+
     },
     picker: {
         marginBottom: 20,
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#fff',
+        height: 50,
+        borderColor: 'black', // or any color you want
+        borderWidth: 1,       // set the width of the border
+        borderRadius: 5,
     },
     suggestionsContainer: {
         backgroundColor: '#e0e0e0',
         marginVertical: 5,
         padding: 10,
+
     },
     suggestionItem: {
         padding: 8,
