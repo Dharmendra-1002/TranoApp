@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity , ScrollView } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -8,6 +8,7 @@ const Distributorwallet_certificate_gesture = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView className="flex-1 items-center" style={{ backgroundColor: '#4e2d87' }}>
+  
       <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
         <View className={`w-full h-full bg-white rounded-lg shadow-lg p-4`}>
           <View className={`flex justify-center items-center`}>
@@ -45,9 +46,26 @@ const Distributorwallet_certificate_gesture = () => {
             </TouchableOpacity>
              
             </View>
+
+
+
+            <View className={`w-11/12 bg-gray-300 rounded-lg shadow-lg mb-4`}>
+            <TouchableOpacity onPress={() => navigation.navigate('DistributorinstallationLogin')}>
+            <Card.Title
+                title="Device Installation"
+              
+                left={(props) => <Avatar.Icon {...props} icon="monitor-cellphone" />}
+                right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
+              />
+            </TouchableOpacity>
+             
+            </View>
+
+
           </View>
         </View>
       </View>
+  
     </SafeAreaView>
   );
 }

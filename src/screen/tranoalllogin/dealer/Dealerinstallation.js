@@ -9,11 +9,10 @@ import { Picker } from '@react-native-picker/picker';
 import { useRoute } from '@react-navigation/native';
 import ImageCropPicker from 'react-native-image-crop-picker';
 import { useNavigation } from '@react-navigation/native';
-import CustomInputSection from '../../../component/CustominputSection';
+import Dealer from '../dealer/Dealer';
 
 
-
-const TechnicianInstallationForm = () => {
+const Dealerinstallation = () => {
     const [vehicleType, setVehicleType] = useState('');
     const [imeiData, setImeiData] = useState([]);
     const [VehicleMakeData, setVehicleMakeData] = useState([]);
@@ -35,41 +34,93 @@ const TechnicianInstallationForm = () => {
     const [image, setImage] = useState(null);
     const navigation = useNavigation();
     const [Customer, setCustomer] = useState('');
-    const [Dealer, setDealer] = useState('');
-    const [DateofInstallation, setDateofInstallation] = useState('');
-    const [DowanloadCertificate, setDowanloadCertificate] = useState('');
+    const [Dateofinstallation, setDateofinstallation] = useState('');
+    const [ICCID, setICCID] = useState('');
+    const [SIMONE, setSIMONE] = useState('');
+    const [SIMTWO, setSIMTWO] = useState('');
+    const [NetworkProfiles, setNetworkProfiles] = useState('');
+    const [ValidityStartDate, setvaildityStartDate] = useState('');
+    const [ValidityEndDate, setValidityEndDate] = useState('');
+    const [FitmentCertificateNo, setFitmentCertificateNo] = useState('');
+    const [DownloadCertificate, setDownloadCertificate] = useState('');
     const [DepartmentCopy, setDepartmentCopy] = useState('');
-    const [CustomerCopy, setCustomerCopy] = useState(' ');
+    const [CustomerCopy, setCustomerCopy] = useState('');
 
 
 
-    const handleDealerTextChange = (text) => {
-        setDealer(text);
-        // You can add further logic, such as validation or formatting
-    };
 
-    const handleDateofInstallationTextChange = (text) => {
-        setDateofInstallation(text);
-        // You can add further logic, such as validation or formatting
-    };
-
-    const handleDowanloadCertificateTextChange = (text) => {
-        setDowanloadCertificate(text);
-        // You can add further logic, such as validation or formatting
-    };
-
-    const handleDepartmentCopyTextChange = (text) => {
-        setDepartmentCopy(text);
-        // You can add further logic, such as validation or formatting
-    };
 
 
     const handleCustomerCopyTextChange = (text) => {
         setCustomerCopy(text);
+    }
+
+
+
+    const handleDepartmentCopyTextChange = (text) => {
+        setDepartmentCopy(text);
+    }
+
+
+    const handleValidityStartDateTextChange = (text) => {
+        setvaildityStartDate(text);
+    }
+
+
+    const handleFitmentCertificateNoTextChange = (text) => {
+        setFitmentCertificateNo(text);
+    }
+
+
+    const handleDownloadCertificateTextChange = (text) => {
+        setDownloadCertificate(text);
+    }
+
+
+    const handleVaildityEndDateTextChange = (text) => {
+        setValidityEndDate(text);
+    }
+
+    const handleICCIDTextChange = (text) => {
+        setICCID(text);
         // You can add further logic, such as validation or formatting
     };
 
 
+
+
+
+
+
+
+
+    const handleSIMONETextChange = (text) => {
+        setSIMONE(text);
+        // You can add further logic, such as validation or formatting
+    };
+
+
+
+    const handleSIMTWOTextChange = (text) => {
+        setSIMTWO(text);
+        // You can add further logic, such as validation or formatting
+    };
+
+
+
+
+    const handleNetworkProfilesTextChange = (text) => {
+        setNetworkProfiles(text);
+        // You can add further logic, such as validation or formatting
+    };
+
+
+
+
+    const handleDateofinstallationTextChange = (text) => {
+        setDateofinstallation(text);
+        // You can add further logic, such as validation or formatting
+    };
 
 
 
@@ -119,7 +170,7 @@ const TechnicianInstallationForm = () => {
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                        'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                         'Accept': '*/*',
                     },
                 }
@@ -159,7 +210,7 @@ const TechnicianInstallationForm = () => {
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                        'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                         'Accept': '*/*',
                     },
                 }
@@ -216,7 +267,7 @@ const TechnicianInstallationForm = () => {
         try {
             const response = await axios.get('http://testing-only-erp-api.containe.in/VehicleType', {
                 headers: {
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Authorization': `Bearer ${token}`,
                 }
             });
@@ -246,7 +297,7 @@ const TechnicianInstallationForm = () => {
         try {
             const response = await axios.get('http://testing-only-erp-api.containe.in/States', {
                 headers: {
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Authorization': `Bearer ${token}`
                 }
             });
@@ -283,7 +334,7 @@ const TechnicianInstallationForm = () => {
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                        'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                         'Accept': '*/*',
                     },
                 }
@@ -316,7 +367,7 @@ const TechnicianInstallationForm = () => {
             const response = await axios.get(`http://testing-only-erp-api.containe.in/api/Districts/stateid?id=${stateId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Accept': '*/*',
                 },
             });
@@ -338,7 +389,7 @@ const TechnicianInstallationForm = () => {
             const response = await axios.get(`http://testing-only-erp-api.containe.in/api/RTODivisions/GetRTODivisionsByState?stateId=${stateId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Accept': '*/*',
                 },
             });
@@ -426,68 +477,129 @@ const TechnicianInstallationForm = () => {
             <View className="bg-white w-[92%] h-[95%] rounded-md mt-5 p-5 ">
                 <ScrollView showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}>
+
+
+
+
+
+
+                  
+
+
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>ICCID</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="ICCID"
+
+                        onChangeText={handleICCIDTextChange}
+                    />
+
+
+
+
+
+
+
+
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>Date of installation</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="Date of installation"
+
+                        onChangeText={handleDateofinstallationTextChange}
+                    />
+
+
+
+
+
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>SIM ONE</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="SIM ONE"
+
+                        onChangeText={handleSIMONETextChange}
+
+                    />
+
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>SIM TWO</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="SIM ONE"
+
+                        onChangeText={handleSIMTWOTextChange}
+
+                    />
+
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>Network Profile</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="Network Profile"
+
+                        onChangeText={handleNetworkProfilesTextChange}
+
+                    />
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>Validity Start Date</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="Validity Start Date"
+
+                        onChangeText={handleValidityStartDateTextChange}
+
+                    />
+
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>Fitment Certificate No</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="Validity Start Date"
+
+                        onChangeText={handleFitmentCertificateNoTextChange}
+
+                    />
+
+
+                    <Text style={{ fontSize: 20, color: '#4e2d87' }}>Download Certificate</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="Download Certificate"
+
+                        onChangeText={setDownloadCertificate} />
+
+
+ <Text style={{ fontSize: 20, color: '#4e2d87' }}>Department Copy</Text>
+                    <TextInput
+                        mode="outlined"
+                        label="Department Copy"
+
+                        onChangeText={setDepartmentCopy} />
+
+<Text style={{ fontSize: 20, color: '#4e2d87' }}>Customer Copy</Text>
+                    <TextInput
+                        mode="outlined"
+                        label=" Customer Copy"
+
+                        onChangeText={setCustomerCopy} />
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <View className="py-5">
-
-
-
-                        <CustomInputSection
-                            label="Dealer name"
-                            inputLabel="Dealer"
-                            editable={false}
-                            onChangeText={handleDealerTextChange}
-                        />
-
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Dealer name</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Dealer"
-                            editable={false}
-                            onChangeText={handleDealerTextChange}
-                        />
-
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Date of Installation</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Date of Installation"
-                            editable={false}
-                            onChangeText={handleDateofInstallationTextChange}
-                        />
-
-
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Dowanload Certificate</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Dowanload Certificate"
-
-                            onChangeText={handleDowanloadCertificateTextChange}
-                        />
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Department Copy</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Department Copy"
-
-                            onChangeText={handleDepartmentCopyTextChange}
-                        />
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Customer Copy</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Customer Copy"
-
-                            onChangeText={handleCustomerCopyTextChange}
-                        />
-
-
-
-
-
-
-
-
                         <Text style={{ fontSize: 20, color: '#4e2d87' }}>IMEI</Text>
                         <TextInput
                             mode="outlined"
@@ -804,8 +916,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TechnicianInstallationForm;
-
+export default Dealerinstallation;
 
 
 

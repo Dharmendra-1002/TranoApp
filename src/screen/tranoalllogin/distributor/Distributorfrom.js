@@ -9,11 +9,10 @@ import { Picker } from '@react-native-picker/picker';
 import { useRoute } from '@react-navigation/native';
 import ImageCropPicker from 'react-native-image-crop-picker';
 import { useNavigation } from '@react-navigation/native';
-import CustomInputSection from '../../../component/CustominputSection';
+import Dealer from '../dealer/Dealer';
 
 
-
-const TechnicianInstallationForm = () => {
+const Distributorfrom = () => {
     const [vehicleType, setVehicleType] = useState('');
     const [imeiData, setImeiData] = useState([]);
     const [VehicleMakeData, setVehicleMakeData] = useState([]);
@@ -35,49 +34,13 @@ const TechnicianInstallationForm = () => {
     const [image, setImage] = useState(null);
     const navigation = useNavigation();
     const [Customer, setCustomer] = useState('');
-    const [Dealer, setDealer] = useState('');
-    const [DateofInstallation, setDateofInstallation] = useState('');
-    const [DowanloadCertificate, setDowanloadCertificate] = useState('');
-    const [DepartmentCopy, setDepartmentCopy] = useState('');
-    const [CustomerCopy, setCustomerCopy] = useState(' ');
 
 
 
-    const handleDealerTextChange = (text) => {
-        setDealer(text);
-        // You can add further logic, such as validation or formatting
-    };
-
-    const handleDateofInstallationTextChange = (text) => {
-        setDateofInstallation(text);
-        // You can add further logic, such as validation or formatting
-    };
-
-    const handleDowanloadCertificateTextChange = (text) => {
-        setDowanloadCertificate(text);
-        // You can add further logic, such as validation or formatting
-    };
-
-    const handleDepartmentCopyTextChange = (text) => {
-        setDepartmentCopy(text);
-        // You can add further logic, such as validation or formatting
-    };
-
-
-    const handleCustomerCopyTextChange = (text) => {
-        setCustomerCopy(text);
-        // You can add further logic, such as validation or formatting
-    };
-
-
-
-
-
-
-    const handleCustomerTextChange = (text) => {
+        const handleCustomerTextChange = (text) => {
         setCustomer(text);
         // You can add further logic, such as validation or formatting
-    };
+      };
 
     const handleVehicleNumberTextChange = (text) => {
         setVehicleNumberText(text);
@@ -91,7 +54,7 @@ const TechnicianInstallationForm = () => {
     const route = useRoute();
     const userId = route.params?.userId;
 
-
+    
 
     useEffect(() => {
         const fetchToken = async () => {
@@ -119,7 +82,7 @@ const TechnicianInstallationForm = () => {
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                        'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                         'Accept': '*/*',
                     },
                 }
@@ -159,7 +122,7 @@ const TechnicianInstallationForm = () => {
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                        'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                         'Accept': '*/*',
                     },
                 }
@@ -216,7 +179,7 @@ const TechnicianInstallationForm = () => {
         try {
             const response = await axios.get('http://testing-only-erp-api.containe.in/VehicleType', {
                 headers: {
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Authorization': `Bearer ${token}`,
                 }
             });
@@ -246,7 +209,7 @@ const TechnicianInstallationForm = () => {
         try {
             const response = await axios.get('http://testing-only-erp-api.containe.in/States', {
                 headers: {
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Authorization': `Bearer ${token}`
                 }
             });
@@ -283,7 +246,7 @@ const TechnicianInstallationForm = () => {
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`,
-                        'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                        'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                         'Accept': '*/*',
                     },
                 }
@@ -316,7 +279,7 @@ const TechnicianInstallationForm = () => {
             const response = await axios.get(`http://testing-only-erp-api.containe.in/api/Districts/stateid?id=${stateId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Accept': '*/*',
                 },
             });
@@ -338,7 +301,7 @@ const TechnicianInstallationForm = () => {
             const response = await axios.get(`http://testing-only-erp-api.containe.in/api/RTODivisions/GetRTODivisionsByState?stateId=${stateId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
-                    'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+                    'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
                     'Accept': '*/*',
                 },
             });
@@ -426,68 +389,28 @@ const TechnicianInstallationForm = () => {
             <View className="bg-white w-[92%] h-[95%] rounded-md mt-5 p-5 ">
                 <ScrollView showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <View className="py-5">
-
-
-
-                        <CustomInputSection
-                            label="Dealer name"
-                            inputLabel="Dealer"
-                            editable={false}
-                            onChangeText={handleDealerTextChange}
-                        />
-
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Dealer name</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Dealer"
-                            editable={false}
-                            onChangeText={handleDealerTextChange}
-                        />
-
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Date of Installation</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Date of Installation"
-                            editable={false}
-                            onChangeText={handleDateofInstallationTextChange}
-                        />
-
-
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Dowanload Certificate</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Dowanload Certificate"
-
-                            onChangeText={handleDowanloadCertificateTextChange}
-                        />
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Department Copy</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Department Copy"
-
-                            onChangeText={handleDepartmentCopyTextChange}
-                        />
-
-                        <Text style={{ fontSize: 20, color: '#4e2d87' }}>Customer Copy</Text>
-                        <TextInput
-                            mode="outlined"
-                            label="Customer Copy"
-
-                            onChangeText={handleCustomerCopyTextChange}
-                        />
-
-
-
-
-
-
-
-
                         <Text style={{ fontSize: 20, color: '#4e2d87' }}>IMEI</Text>
                         <TextInput
                             mode="outlined"
@@ -535,12 +458,12 @@ const TechnicianInstallationForm = () => {
                                 selectedValue={selectedState}
                                 onValueChange={handleStateChange}
                                 style={styles.picker}
-
-
+                              
+                               
                             >
                                 <Picker.Item label="Select a state" value="" />
                                 {states.map((state) => (
-                                    <Picker.Item key={state.stateId} label={state.stateName} value={state.stateId} color="#000000" />
+                                    <Picker.Item key={state.stateId} label={state.stateName} value={state.stateId}  color="#000000"  />
                                 ))}
                             </Picker>
                         </View>
@@ -552,9 +475,9 @@ const TechnicianInstallationForm = () => {
                                 onValueChange={setSelectedDistrict}
                                 style={styles.picker}
                             >
-                                <Picker.Item label="Select a district" value="" color="#000000" />
+                                <Picker.Item label="Select a district" value="" color="#000000"/>
                                 {districts.map((district) => (
-                                    <Picker.Item key={district.districtId} label={district.districtName} value={district.districtName} color="#000000" />
+                                    <Picker.Item key={district.districtId} label={district.districtName} value={district.districtName}  color="#000000" />
                                 ))}
                             </Picker>
                         </View>
@@ -569,9 +492,9 @@ const TechnicianInstallationForm = () => {
                                 onValueChange={setSelectedRtoDivision}
                                 style={styles.picker}
                             >
-                                <Picker.Item label="Select RTO division" value="" color="#000000" />
+                                <Picker.Item label="Select RTO division" value="" color="#000000"/>
                                 {rtoDivisions.map((rto) => (
-                                    <Picker.Item key={rto.rtaDivisionName} label={rto.rtaDivisionName} value={rto.rtaDivisionName} color="#000000" />
+                                    <Picker.Item key={rto.rtaDivisionName} label={rto.rtaDivisionName} value={rto.rtaDivisionName}  color="#000000" />
                                 ))}
                             </Picker>
                         </View>
@@ -585,7 +508,7 @@ const TechnicianInstallationForm = () => {
                                 onValueChange={(itemValue) => setVehicleType(itemValue)}
                                 style={styles.picker}
                             >
-                                <Picker.Item label="Select Vehicle Type" value="" color="#000000" />
+                                <Picker.Item label="Select Vehicle Type" value=""  color="#000000"/>
                                 <Picker.Item label="Old" value="old" />
                                 <Picker.Item label="New" value="new" />
                             </Picker>
@@ -613,7 +536,7 @@ const TechnicianInstallationForm = () => {
                             >
                                 <Picker.Item label="Select Vehicle Type" value="" />
                                 {vehicleTypes.map((vehicle) => (
-                                    <Picker.Item key={vehicle.id} label={vehicle.name} value={vehicle.id} color="#000000" />
+                                    <Picker.Item key={vehicle.id} label={vehicle.name} value={vehicle.id}  color="#000000"/>
                                 ))}
                             </Picker>
                         </View>
@@ -698,7 +621,7 @@ const TechnicianInstallationForm = () => {
                                 onValueChange={(itemValue) => setNoOfSos(itemValue)}
                                 style={styles.picker} color="#000000"
                             >
-                                <Picker.Item label="Select Number of SOS" value="" color="#000000" />
+                                <Picker.Item label="Select Number of SOS" value="" color="#000000"/>
                                 {Array.from({ length: 10 }, (_, i) => (
                                     <Picker.Item key={i + 1} label={`${i + 1}`} value={`${i + 1}`} />
                                 ))}
@@ -804,8 +727,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default TechnicianInstallationForm;
-
+export default Distributorfrom;
 
 
 

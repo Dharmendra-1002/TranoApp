@@ -92,7 +92,6 @@ import Mddevices7day from '../screen/tranoalllogin/employee/managingdirector/Mdd
 import MdAllSelfValidity from '../screen/tranoalllogin/employee/managingdirector/MdAllSelfValidity';
 import MdEsimHome from '../screen/tranoalllogin/employee/managingdirector/MdEsimHome';
 import MdEsimHomeFrom from '../screen/tranoalllogin/employee/managingdirector/MdEsimHomeFrom';
-import CtplLogin from '../screen/tranoalllogin/CtplLogin';
 import OemRoyalityAccount from '../screen/tranoalllogin/oem/OemRoyalityAccount';
 import Dealer from '../screen/tranoalllogin/dealer/Dealer';
 import DealerHistory from '../screen/tranoalllogin/dealer/DealerHistory';
@@ -108,6 +107,18 @@ import DistributorRoyalityAccount from '../screen/tranoalllogin/distributor/Dist
 import Trano_All_Login from '../screen/tranoalllogin/Trano_All_Login';
 import Header from '../component/Header';
 
+
+import Distributorfrom from '../screen/tranoalllogin/distributor/Distributorfrom';
+
+import DistributorMyinstallations from '../screen/tranoalllogin/distributor/DistributorMyinstallations';
+import DistributorinstallationLogin from '../screen/tranoalllogin/distributor/DistributorinstallationLogin';
+import DistributorHome from '../screen/tranoalllogin/distributor/DistributorHome';
+import Distributorinstallationfrom from '../screen/tranoalllogin/distributor/Distributorinstallationfrom';
+import DealerDeviceLogin from '../screen/tranoalllogin/dealer/DealerDeviceLogin';
+import DealerHome from '../screen/tranoalllogin/dealer/DealerHome';
+import Dealerinstallation from '../screen/tranoalllogin/dealer/Dealerinstallation';
+import Dealermyinstallation from '../screen/tranoalllogin/dealer/Dealermyinstallation';
+import LoginForm from '../component/LoginForm';
 
 
 const Stack = createStackNavigator();
@@ -135,6 +146,152 @@ const AppNavigation = () => {
 
 
 
+
+            <Stack.Screen name='DistributorHome' component={DistributorHome} options={{
+                title: 'DistributorHome',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#fff'
+
+
+            }} />
+
+
+            <Stack.Screen name="Distributorfrom" component={Distributorfrom} options={{
+                title: 'Distributorfrom',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+            <Stack.Screen name="Dealerinstallation" component={Dealerinstallation} options={{
+                title: 'Dealer installation From',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+            <Stack.Screen name="DistributorMyinstallations" component={DistributorMyinstallations} options={{
+                title: 'DistributorMyinstallations',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+<Stack.Screen name="LoginForm" component={LoginForm} options={{
+                title: 'LoginForm',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+            <Stack.Screen name="DealerDeviceLogin" component={DealerDeviceLogin} options={{
+                title: 'DealerDeviceLogin',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+<Stack.Screen name="Dealermyinstallation" component={Dealermyinstallation} options={{
+                title: 'Dealer_my_installation',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <Stack.Screen name="DealerHome" component={DealerHome} options={{
+                title: 'Dealer Home',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+
+
+            <Stack.Screen name="Dealer_certificate" component={Dealer_certificate} options={{
+                title: 'Dealer_certificate',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+            <Stack.Screen name="Dealervltd" component={Dealervltd} options={{
+                title: 'Dealervltd',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+            <Stack.Screen name="DistributorinstallationLogin" component={DistributorinstallationLogin} options={{
+                title: 'Device Installation',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
+
+
+
+
+
+
+            <Stack.Screen name="Distributorinstallationfrom" component={Distributorinstallationfrom} options={{
+                title: 'Installation From',
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: '#4e2d87'
+                }, headerTintColor: '#ffff'
+            }} />
 
 
 
@@ -168,13 +325,6 @@ const AppNavigation = () => {
                 }, headerTintColor: '#ffff'
             }} />
 
-            <Stack.Screen name=" CtplLogin" component={CtplLogin} options={{
-                title: 'CtplLogin',
-                headerShown: true,
-                headerStyle: {
-                    backgroundColor: '#4e2d87'
-                }, headerTintColor: '#ffff'
-            }} />
 
 
             <Stack.Screen name="MdEsimHome" component={MdEsimHome} options={{

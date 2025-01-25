@@ -19,10 +19,8 @@
 //       <Text className="text-violet-950 py-2 font-normal text-lg"></Text>
 //       <View style={{ position: 'relative' }}>
 //         <TextInput
-
 //           mode="outlined"
 //           label="Password"
-
 //           value={value}
 //           onChangeText={onChangeText}
 //           secureTextEntry={!showPassword}
@@ -38,7 +36,7 @@
 //   );
 // };
 
-// const Self_ValidityLogin = () => {
+// const DistributorinstallationLogin = () => {
 //   const navigation = useNavigation();
 //   const [userId, setUserId] = useState('');
 //   const [password, setPassword] = useState('');
@@ -58,6 +56,7 @@
 //   const handleFingerprintAuthentication = () => {
 //     TouchID.authenticate('Authenticate with fingerprint', optionalConfigObject)
 //       .then(success => {
+//         // Optional: Remove this alert if you don't want any success message
 //         Alert.alert('Authenticated Successfully');
 //         navigation.navigate('OemWallet');
 //       })
@@ -77,7 +76,7 @@
 //         {
 //           headers: {
 //             'Content-Type': 'application/json',
-//             MobileAPISecKey: 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+//             MobileAPISecKey: 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
 //           },
 //         },
 //       );
@@ -88,8 +87,9 @@
 //       if (data.code === '200') {
 //         console.log('=================', data.token);
 //         await AsyncStorage.setItem('userToken', data.token);
-//         Alert.alert('Login Successful');
-//         navigation.navigate('Give_Self_Validity');
+//         // Remove or comment out the success alert
+//         // Alert.alert('Login Successful');
+//         navigation.navigate('DistributorHome');
 //       } else {
 //         Alert.alert('Login Failed', data.message);
 //       }
@@ -119,14 +119,10 @@
 //           <View className="w-[100%] h-[82%] bg-white rounded-lg shadow-lg px-5 py-5">
 //             <View className="space-y-3">
 //               <View>
-//                 <Text className="text-violet-950 py-2 font-normal text-lg">
-
-//                 </Text>
+//                 <Text className="text-violet-950 py-2 font-normal text-lg"></Text>
 //                 <TextInput
 //                   mode="outlined"
 //                   label="UserName"
-
-
 //                   value={userId}
 //                   onChangeText={setUserId}
 //                 />
@@ -150,8 +146,7 @@
 //   );
 // };
 
-// export default Self_ValidityLogin;
-
+// export default DistributorinstallationLogin;
 
 
 
@@ -159,19 +154,25 @@
 import React from 'react';
 import LoginForm from '../../../component/LoginForm';
 
-const Self_ValidityLogin = () => {
+const DistributorinstallationLogin = () => {
   return (
     <LoginForm
       logo={require('../../../asset/ctpllogo.png')}
       apiUrl="http://testing-only-erp-api.containe.in/api/Account/Login"
       apiKey="K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY"
-      onSuccessNavigate="Give_Self_Validity"
-      title="Sign in to Continue"
+      onSuccessNavigate="DistributorHome"
+      title="Customer Login"
     />
   );
 };
 
-export default Self_ValidityLogin
+export default DistributorinstallationLogin
+
+
+
+
+
+
 
 
 

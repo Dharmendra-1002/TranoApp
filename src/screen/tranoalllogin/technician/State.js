@@ -61,7 +61,7 @@ const TechnicianInstallationForm = () => {
             setShowImeiSuggestions(true);  // Show IMEI suggestions
         } catch (error) {
             console.warn('Error fetching IMEI data:', error.response ? error.response.data : error.message);
-        } finally {
+        } finally {                 
             setLoading(false);  // Stop loading when data is fetched
         }
     }, [token, userId]);

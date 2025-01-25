@@ -16,7 +16,7 @@ const Dealervltd = () => {
     <SafeAreaView className="flex-1 items-center" style={{ backgroundColor: '#4e2d87' }}>
       <View className="bg-white w-[92%] h-[95%] rounded-md mt-5">
         <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginTop: 60 }}>
-          <TouchableOpacity onPress={() => navigation.navigate('Distributorwallet_certificate_gesture')} className=' bg-[#4e2d87] w-[43%] h-28 items-center justify-center py-3 rounded-md'>
+          <TouchableOpacity onPress={() => navigation.navigate('Dealer_certificate')} className=' bg-[#4e2d87] w-[43%] h-28 items-center justify-center py-3 rounded-md'>
           <Image
                                         source={require("../../../asset/VLTD.png")}
                                         resizeMode="contain"

@@ -36,7 +36,7 @@ const PasswordInput = ({ value, onChangeText }) => {
   );
 };
 
-const TechnicianLogin = () => {
+const DealerDeviceLogin = () => {
   const navigation = useNavigation();
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
@@ -76,7 +76,7 @@ const TechnicianLogin = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            MobileAPISecKey: 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
+            MobileAPISecKey: 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
           },
         },
       );
@@ -89,7 +89,7 @@ const TechnicianLogin = () => {
         await AsyncStorage.setItem('userToken', data.token);
         // Remove or comment out the success alert
         // Alert.alert('Login Successful');
-        navigation.navigate('TechnicianHome');
+        navigation.navigate('DealerHome');
       } else {
         Alert.alert('Login Failed', data.message);
       }
@@ -146,4 +146,15 @@ const TechnicianLogin = () => {
   );
 };
 
-export default TechnicianLogin;
+export default DealerDeviceLogin;
+
+
+
+
+
+
+
+
+
+
+

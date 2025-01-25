@@ -10,24 +10,64 @@ import Colors from '../../../component/Colors';
 import { jwtDecode } from "jwt-decode";
 import { decode } from "base-64";
 import { Alert } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 
 global.atob = decode;
  
 const IconSize = 24;
  
+// const WalletHome = ({ route }) => {
+//   const { token } = route?.params || {}; 
+//   const navigation = useNavigation();
+//   const [data, setData] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   // const [token, setToken] = useState(null);
+//   const [userId, setUserId] = useState(null);
+//   const [isCreditLimitVisible, setCreditLimitVisible] = useState(false);
+//   const [isCreditLimitVisibles, setCreditLimitVisibles] = useState(false);
+//   const [menuVisible, setMenuVisible] = useState(false);
+ 
+//   const toggleMenu = () => {
+//     setMenuVisible(!menuVisible);
+//   };
+
+
+
 const WalletHome = () => {
+  const [token, setToken] = useState(null);
+  const route = useRoute(); // Access route params
+  const { token: receivedToken } = route.params || {};
   const navigation = useNavigation();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [token, setToken] = useState(null);
+  // const [token, setToken] = useState(null);
   const [userId, setUserId] = useState(null);
   const [isCreditLimitVisible, setCreditLimitVisible] = useState(false);
   const [isCreditLimitVisibles, setCreditLimitVisibles] = useState(false);
   const [menuVisible, setMenuVisible] = useState(false);
  
+  useEffect(() => {
+    if (receivedToken) {
+      setToken(receivedToken); // Set token to state when received
+    }
+  }, [receivedToken]);
+
+
+
+
+
+
+
+
+
+
+
+
+
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
+ 
  
   const handleLogout = () => {
     Alert.alert(
@@ -80,7 +120,7 @@ const WalletHome = () => {
             {
               headers: {
                 'Authorization': `Bearer ${token}`,
-                'MobileAPISecKey': 'X7vNc2Pg4L0kRy1FJ8sBhMzWaEt5DpQx',
+                'MobileAPISecKey': 'K9qPw2Nx8V0rRy7LJ4bMhZtWaEp5FgY',
               }
             }
           );
@@ -414,5 +454,4 @@ const styles = StyleSheet.create({
 export default WalletHome;
  
  
-
 

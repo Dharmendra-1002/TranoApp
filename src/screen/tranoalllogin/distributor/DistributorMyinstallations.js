@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { useState, useEffect } from 'react';
 import { View, FlatList, Text, StyleSheet, Alert, ScrollView } from 'react-native';
 
-const TechnicianCertificate = () => {
+const DistributorMyinstallations = () => {
   const [formData, setFormData] = useState([]);
 
   // Function to retrieve data from AsyncStorage
@@ -73,7 +73,7 @@ const TechnicianCertificate = () => {
   );
 };
 
-export default TechnicianCertificate;
+export default DistributorMyinstallations;
 
 const styles = StyleSheet.create({
   container: {
@@ -132,3 +132,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+
+

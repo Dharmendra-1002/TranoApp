@@ -3,6 +3,7 @@ import { ScrollView, View, Text, StyleSheet, SafeAreaView, TouchableOpacity } fr
 import { useNavigation } from '@react-navigation/native';
 import { DataTable } from 'react-native-paper';
 import Orientation from 'react-native-orientation-locker'; // Import Orientation
+import { AnimatedScrollView } from 'react-native-reanimated/lib/typescript/reanimated2/component/ScrollView';
 
 const DistributorStatement = () => {
   const navigation = useNavigation();
@@ -38,6 +39,7 @@ const DistributorStatement = () => {
 
   return (
     <SafeAreaView style={{ flex: 1, alignItems: 'center', backgroundColor: '#4e2d87' }}>
+  
       <View style={{ backgroundColor: '#fff', width: '92%', height: '95%', borderRadius: 10, marginTop: 20 }}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <View style={{ flexDirection: 'column' }}>
@@ -79,6 +81,7 @@ const DistributorStatement = () => {
           </ScrollView>
         </View>
       </View>
+ 
     </SafeAreaView>
   );
 };

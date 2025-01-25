@@ -43,6 +43,25 @@ const Dealer_certificate = () => {
                 right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
               />
             </TouchableOpacity>
+
+
+             
+            </View>
+
+
+
+            
+            <View className={`w-11/12 bg-gray-300 rounded-lg shadow-lg mb-4`}>
+            <TouchableOpacity onPress={() => navigation.navigate('DealerDeviceLogin')}>
+            <Card.Title
+                title="Device installation"
+                
+                left={(props) => <Avatar.Icon {...props} icon="monitor-cellphone" />}
+                right={(props) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
+              />
+            </TouchableOpacity>
+
+            
              
             </View>
           </View>
